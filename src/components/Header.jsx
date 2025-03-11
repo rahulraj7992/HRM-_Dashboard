@@ -1,0 +1,30 @@
+import { useState } from "react";
+import "../assets/css/header.css";
+
+export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  return (
+    <div className="header">
+      <h1 className="header-title">HRM Software</h1>
+      
+      <div className="header-actions">
+        <input type="text" className="search-box" placeholder="Search..." />
+
+        {/* Hamburger Menu for Small Screens */}
+        <button className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </button>
+
+        {/* Buttons (Hidden on small screens, shown when menu is open) */}
+        <div className={`menu-buttons ${menuOpen ? "show" : ""}`}>
+          <button className="header-button">Activity</button>
+          <button className="header-button">Alerts</button>
+          <button className="header-button">Message</button>
+          <button className="header-button">Admin</button>
+          <button className="header-button">Logout</button>
+        </div>
+      </div>
+    </div>
+  );
+}

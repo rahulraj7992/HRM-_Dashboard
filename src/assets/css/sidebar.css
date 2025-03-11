@@ -1,0 +1,117 @@
+.sidebar {
+  width: 250px;
+  background: #cae3e9;
+  color: #171212;
+  padding: 20px;
+  height: 90vh;
+  margin-top: 93.5px;
+  margin-bottom: 40px;
+  font-weight: bold;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto !important;
+  z-index: 900;
+  scrollbar-width:none;
+  scrollbar-color: #007bff #f4f4f4;
+}
+
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+  margin-bottom: 40px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 250px;
+  width: calc(100% - 250px);
+  background: #fff;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+}
+
+.sidebar button {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background: transparent;
+  color: #000;
+  text-align: left;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  border: none;
+  width: 100%;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+.sidebar button:hover {
+  background: #007bff;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar.collapsed + .main-content {
+  margin-left: 80px;
+}
+
+.sidebar.collapsed + .navbar {
+  left: 80px;
+  width: calc(100% - 80px);
+}
+
+.sidebar.collapsed button {
+  justify-content: center;
+}
+
+/* Ensure independent scrolling for sidebar */
+.sidebar {
+  max-height: 100vh;
+  overflow-y: auto !important;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 10px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    width: 80px;
+  }
+  .sidebar button span {
+    display: none;
+  }
+  .sidebar button {
+    justify-content: center;
+  }
+  .main-content {
+    margin-left: 80px;
+  }
+  .navbar {
+    left: 80px;
+    width: calc(100% - 80px);
+  }
+}

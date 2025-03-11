@@ -1,0 +1,134 @@
+/* profile photo styling */
+.container {
+  padding: 20px;
+  background: #cae3e9;
+  height: calc(100vh - 80px);
+  margin-top: 40px;
+  margin-left: 300px;
+  transition: margin-left 0.3s ease;
+  overflow-y: auto;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 20px;
+}
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #60bcd3;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.icon {
+  font-size: 40px;
+  margin-right: 15px;
+}
+
+.green { color: #0cab3b; }
+.orange { color: #f97316; }
+.purple { color: #9333ea; }
+.blue { color: #f12121; }
+
+.recent-applications {
+  background: #b9e7f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.application {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.employee-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.on-leave, .on-duty {
+  background: #b9e7f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 0;
+  display: inline-block;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.name-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.application .icons .clickable {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.application .icons .green {
+  background-color: green;
+}
+
+.application .icons .red {
+  background-color: red;
+}
+
+/* Remove scrollbar and reduce width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

@@ -1,0 +1,118 @@
+/* Header container */
+/* Header container */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #60bcd3;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+  z-index: 1000;
+}
+
+/* Add margin to body to prevent content from being hidden behind the fixed header */
+body {
+  padding-top: 70px; /* Adjust based on header height */
+}
+
+
+/* Title */
+.header-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: blue;
+}
+
+/* Actions container */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+/* Search box */
+.search-box {
+  width: 200px;
+  padding: 8px 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #007bff;
+}
+
+/* Buttons container */
+.menu-buttons {
+  display: flex;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  margin-right: 44px;
+}
+
+/* Buttons */
+.header-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.header-button:hover {
+  background-color: #0056b3;
+}
+
+/* Hamburger Menu (Hidden on large screens) */
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Hide regular buttons */
+  .menu-buttons {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  /* Show buttons when menu is open */
+  .menu-buttons.show {
+    display: flex;
+  }
+
+  /* Show hamburger menu */
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Adjust search box width */
+  .search-box {
+    width: 150px;
+  }
+}
