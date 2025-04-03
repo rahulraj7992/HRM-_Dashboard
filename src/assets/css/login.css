@@ -1,6 +1,77 @@
-.login-page {
-    padding: 20px;
-    background: #e0f7fa;
-    height: 100%;
-    text-align: center;
+/* Full-page container */
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 20px;
+  margin-left:140px;
+}
+
+/* Login Box */
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+/* Input Fields */
+.input-group {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+/* Buttons */
+.login-button {
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.login-button:hover {
+  background: #0056b3;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .login-box {
+    padding: 20px; /* Reduce padding */
+    max-width: 90%; /* Make it more adaptive */
   }
+}
+
+@media screen and (max-width: 480px) {
+  .login-box {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  .input-group input {
+    padding: 10px;
+    font-size: 14px; /* Slightly smaller text */
+  }
+
+  .login-button {
+    padding: 10px;
+    font-size: 14px;
+  }
+}

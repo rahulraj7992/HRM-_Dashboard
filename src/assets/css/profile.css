@@ -1,5 +1,18 @@
-.profile-page {
-    padding: 20px;
-    background: #f3e5f5;
-    height: 100%;
-  }
+/* profile.css */
+.profile-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 20px;
+  margin: left 9rem;; /* Adjust for sidebar */
+}
+
+.profile-card {
+  width: 400px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
