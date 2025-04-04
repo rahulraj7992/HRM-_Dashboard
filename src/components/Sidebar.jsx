@@ -6,7 +6,7 @@ export default function Sidebar() {
 
   const menuItems = [
     { icon: "fa fa-home", text: "Dashboard", path: "/dashboard" },
-    { icon: "fa fa-users", text: "Patients", path: "/Patients" },
+    { icon: "fa fa-users", text: "Customers", path: "/Customers" },
     { icon: "fa fa-calendar", text: "Appointments", path: "/appointments" },
     { icon: "fa fa-user-md", text: "Doctors", path: "/doctors" },
     { icon: "fa fa-building", text: "Departments", path: "/departments" },

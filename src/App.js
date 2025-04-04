@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
-import { Patients } from "./pages/Patients";
+import CustomerList from "./pages/Customers";
 import { Appointments } from "./pages/Appointments";
 import { Doctors } from "./pages/Doctors";
 import { Departments } from "./pages/Departments";
@@ -10,7 +10,7 @@ import { Signup } from "./components/Signup";
 import { Signin } from "./components/Signin";
 import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
-
+import KycForm from './pages/KycForm';
 import "./assets/css/style.css";
 import "./assets/css/responsive.css";
 
@@ -40,7 +40,8 @@ export default function App() {
                   <div className="content">
                     <Routes>
                       <Route path="/dashboard" element={<Dashboard />} />
-                      <Route path="/patients" element={<Patients />} />
+                      <Route path="/customers" element={<CustomerList />} />
+                      <Route path="/KycForm/:customerId" component={<KycForm/>} />
                       <Route path="/appointments" element={<Appointments />} />
                       <Route path="/doctors" element={<Doctors />} />
                       <Route path="/departments" element={<Departments />} />
