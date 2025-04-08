@@ -7,17 +7,10 @@ export default function Sidebar() {
   const menuItems = [
     { icon: "fa fa-home", text: "Dashboard", path: "/dashboard" },
     { icon: "fa fa-users", text: "Customers", path: "/Customers" },
-    { icon: "fa fa-calendar", text: "Appointments", path: "/appointments" },
-    { icon: "fa fa-user-md", text: "Doctors", path: "/doctors" },
-    { icon: "fa fa-building", text: "Departments", path: "/departments" },
-    { icon: "fa fa-user", text: "Profile", path: "/profile" },
+    { icon: "fa fa-user", text: "HR Module", path: "/HrModule" },
     { icon: "fa fa-cog", text: "Settings", path: "/settings" },
     { icon: "fa fa-file", text: "Reports", path: "/reports" },
-    { icon: "fa fa-file-invoice", text: "Invoices", path: "/invoices" },
-    { icon: "fa fa-bell", text: "Notifications", path: "/notifications" },
     { icon: "fa fa-envelope", text: "Messages", path: "/messages" },
-    { icon: "fa fa-star", text: "Reviews", path: "/reviews" },
-    { icon: "fa fa-chart-line", text: "Analytics", path: "/analytics" },
     { icon: "fa fa-envelope", text: "Contact Us", path: "/contact" },
   ];
 
