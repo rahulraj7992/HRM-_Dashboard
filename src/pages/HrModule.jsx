@@ -7,6 +7,10 @@ const HrModule = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [showReview, setShowReview] = useState(false);
+  const [errors, setErrors] = useState({
+    panNumber: "",
+    aadharNumber: "",
+  });
 
   const nextStep = () => setStep((prev) => prev + 1);
   const prevStep = () => setStep((prev) => prev - 1);
@@ -14,15 +18,38 @@ const HrModule = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (name === "panNumber") {
+      if (value.length !== 10) {
+        setErrors((prev) => ({
+          ...prev,
+          panNumber: "PAN must be exactly 10 characters.",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, panNumber: "" }));
+      }
+    }
+
+    if (name === "aadharNumber") {
+      if (!/^\d*$/.test(value)) {
+        setErrors((prev) => ({
+          ...prev,
+          aadharNumber: "Aadhaar must contain digits only.",
+        }));
+      } else if (value.length !== 16) {
+        setErrors((prev) => ({
+          ...prev,
+          aadharNumber: "Aadhaar must be exactly 16 digits.",
+        }));
+      } else {
+        setErrors((prev) => ({ ...prev, aadharNumber: "" }));
+      }
+    }
   };
 
   const handleSubmit = () => {
     console.log("Form submitted with data:", formData);
     alert("Form submitted successfully!");
-    // You can also clear the form here if needed:
-    // setFormData({});
-    // setStep(1);
-    // setShowReview(false);
   };
 
   const renderReviewData = () => {
@@ -50,7 +77,7 @@ const HrModule = () => {
       address: "Address",
       maritalStatus: "Marital Status",
       dob: "Date of Birth",
-      doj: "Date of Joining"
+      doj: "Date of Joining",
     };
 
     return Object.entries(labels).map(([key, label]) => (
@@ -77,16 +104,43 @@ const HrModule = () => {
               <div>
                 <label>Pan Number</label>
                 <div className="input-group">
-                  <input name="panNumber" onChange={handleChange} type="text" placeholder="Enter Pan Number" />
-                  <button>Verify</button>
+                  <input
+                    name="panNumber"
+                    value={formData.panNumber || ""}
+                    onChange={handleChange}
+                    type="text"
+                    maxLength="12"
+                    placeholder="Enter Pan Number"
+                  />
+                  <button disabled={!!errors.panNumber || !formData.panNumber}>
+                    Verify
+                  </button>
                 </div>
+                {errors.panNumber && (
+                  <p className="error-text">{errors.panNumber}</p>
+                )}
               </div>
+
               <div>
                 <label>Aadhar Number</label>
                 <div className="input-group">
-                  <input name="aadharNumber" onChange={handleChange} type="text" placeholder="Enter Aadhar Number" />
-                  <button>Verify</button>
+                  <input
+                    name="aadharNumber"
+                    value={formData.aadharNumber || ""}
+                    onChange={handleChange}
+                    type="text"
+                    maxLength="16"
+                    placeholder="Enter Aadhar Number"
+                  />
+                  <button
+                    disabled={!!errors.aadharNumber || !formData.aadharNumber}
+                  >
+                    Verify
+                  </button>
                 </div>
+                {errors.aadharNumber && (
+                  <p className="error-text">{errors.aadharNumber}</p>
+                )}
               </div>
             </div>
 
@@ -94,14 +148,14 @@ const HrModule = () => {
               <div>
                 <label>Choose Branch</label>
                 <select name="branch" onChange={handleChange}>
-                  <option value="">Select</option>
+                  <option>Select</option>
                   <option>Muzaffarpur</option>
                 </select>
               </div>
               <div>
                 <label>Choose Role</label>
                 <select name="role" onChange={handleChange}>
-                  <option value="">Select</option>
+                  <option>Select</option>
                   <option>Admin</option>
                 </select>
               </div>
@@ -111,22 +165,35 @@ const HrModule = () => {
               <div>
                 <label>Choose Title</label>
                 <select name="title" onChange={handleChange}>
-                  <option value="">Select</option>
+                  <option>Mrs.</option>
                   <option>Mr.</option>
                 </select>
               </div>
               <div>
                 <label>Choose Gender</label>
                 <select name="gender" onChange={handleChange}>
-                  <option value="">Select</option>
+                  <option>Select</option>
                   <option>Male</option>
                 </select>
               </div>
             </div>
 
             <div className="button-group">
-              <button disabled className="btn disabled">PREV</button>
-              <button className="btn" onClick={nextStep}>NEXT</button>
+              <button disabled className="btn disabled">
+                PREV
+              </button>
+              <button
+                className="btn"
+                onClick={nextStep}
+                disabled={
+                  !!errors.panNumber ||
+                  !!errors.aadharNumber ||
+                  !formData.panNumber ||
+                  !formData.aadharNumber
+                }
+              >
+                NEXT
+              </button>
             </div>
           </div>
         )}
@@ -144,34 +211,59 @@ const HrModule = () => {
             <div className="form-grid">
               <div>
                 <label>Full Name</label>
-                <input name="fullName" onChange={handleChange} type="text" placeholder="Enter full name" />
+                <input
+                  name="fullName"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter full name"
+                />
               </div>
               <div>
                 <label>Guardian Name</label>
-                <input name="guardianName" onChange={handleChange} type="text" placeholder="Enter guardian name" />
+                <input
+                  name="guardianName"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter guardian name"
+                />
               </div>
             </div>
 
             <div className="form-grid">
               <div>
                 <label>Mobile Number</label>
-                <input name="mobile" onChange={handleChange} type="text" placeholder="Enter mobile number" />
+                <input
+                  name="mobile"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter mobile number"
+                />
               </div>
               <div>
                 <label>Email</label>
-                <input name="email" onChange={handleChange} type="email" placeholder="Enter email" />
+                <input
+                  name="email"
+                  onChange={handleChange}
+                  type="email"
+                  placeholder="Enter email"
+                />
               </div>
             </div>
 
             <div className="form-grid">
               <div>
                 <label>Pincode</label>
-                <input name="pincode" onChange={handleChange} type="text" placeholder="Enter pincode" />
+                <input
+                  name="pincode"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter pincode"
+                />
               </div>
               <div>
                 <label>Choose Post Office</label>
                 <select name="postOffice" onChange={handleChange}>
-                  <option value="">Select</option>
+                  <option>Select</option>
                   <option>Stm</option>
                   <option>nhm</option>
                   <option>bhi</option>
@@ -182,28 +274,52 @@ const HrModule = () => {
             <div className="form-grid">
               <div>
                 <label>Bank Account</label>
-                <input name="bankAccount" onChange={handleChange} type="text" placeholder="Enter Bank Account" />
+                <input
+                  name="bankAccount"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter Bank Account"
+                />
               </div>
               <div>
                 <label>Bank IFSC</label>
-                <input name="ifsc" onChange={handleChange} type="text" placeholder="Enter Bank IFSC" />
+                <input
+                  name="ifsc"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter Bank IFSC"
+                />
               </div>
             </div>
 
             <div className="form-grid">
               <div>
                 <label>Bank Branch</label>
-                <input name="bankBranch" onChange={handleChange} type="text" placeholder="Enter bank branch" />
+                <input
+                  name="bankBranch"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter bank branch"
+                />
               </div>
               <div>
                 <label>Bank Name</label>
-                <input name="bankName" onChange={handleChange} type="text" placeholder="Enter Bank Name" />
+                <input
+                  name="bankName"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter Bank Name"
+                />
               </div>
             </div>
 
             <div className="button-group">
-              <button className="btn" onClick={prevStep}>PREV</button>
-              <button className="btn" onClick={nextStep}>NEXT</button>
+              <button className="btn" onClick={prevStep}>
+                PREV
+              </button>
+              <button className="btn" onClick={nextStep}>
+                NEXT
+              </button>
             </div>
           </div>
         )}
@@ -254,7 +370,12 @@ const HrModule = () => {
             <div className="form-grid">
               <div>
                 <label>Address</label>
-                <input name="address" onChange={handleChange} type="text" placeholder="Enter address" />
+                <input
+                  name="address"
+                  onChange={handleChange}
+                  type="text"
+                  placeholder="Enter address"
+                />
               </div>
               <div>
                 <label>Marital Status</label>
@@ -277,8 +398,12 @@ const HrModule = () => {
             </div>
 
             <div className="button-group">
-              <button className="btn" onClick={prevStep}>PREV</button>
-              <button className="btn" onClick={nextStep}>NEXT</button>
+              <button className="btn" onClick={prevStep}>
+                PREV
+              </button>
+              <button className="btn" onClick={nextStep}>
+                NEXT
+              </button>
             </div>
           </div>
         )}
@@ -294,9 +419,15 @@ const HrModule = () => {
             <div className="progress-label">100%</div>
 
             <div className="button-group">
-              <button className="btn" onClick={prevStep}>PREV</button>
-              <button className="btn" onClick={() => setShowReview(true)}>REVIEW</button>
-              <button className="btn" onClick={handleSubmit}>SUBMIT</button>
+              <button className="btn" onClick={prevStep}>
+                PREV
+              </button>
+              <button className="btn" onClick={() => setShowReview(true)}>
+                REVIEW
+              </button>
+              <button className="btn" onClick={handleSubmit}>
+                SUBMIT
+              </button>
             </div>
 
             {showReview && (

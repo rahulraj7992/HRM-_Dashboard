@@ -175,6 +175,12 @@
   .review-box strong {
     color: #1a202c; /* stronger contrast for labels */
   }
+ 
+.error-text {
+    color: #ae1818;
+    font-size: 0.875rem;
+    margin-top: 4px;
+}
   
   
   
