@@ -1,0 +1,135 @@
+/* =============================== */
+/* Fixed Deposit Form Styles       */
+/* =============================== */
+
+.FixedDepositForm {
+  background-color: #d4dce5;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 100%;
+  margin: 40px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.FixedDepositForm__section {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FixedDepositForm__section label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 6px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.FixedDepositForm__section input,
+.FixedDepositForm__section select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  color: #333;
+  font-size: 14px;
+  transition: border-color 0.3s, background-color 0.3s;
+}
+
+.FixedDepositForm__section input[readonly] {
+  background-color: #f1f1f1;
+  color: #888;
+}
+
+.FixedDepositForm__section input:focus,
+.FixedDepositForm__section select:focus {
+  border-color: #3b82f6;
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+/* =============================== */
+/* Account Type, Scheme, and ROI (Single Row) */
+/* =============================== */
+
+/* For the account type, scheme, and ROI fields */
+.account-scheme-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Adjust gap between fields */
+}
+
+.account-field {
+  width: 32%; /* Each field takes 32% of the width */
+}
+
+.account-field select,
+.account-field input {
+  width: 100%;
+}
+
+.FixedDepositForm__button {
+  display: flex;
+  justify-content: center;
+}
+
+.FixedDepositForm__button button {
+  background-color: #0f3c3a;
+  color: white;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.FixedDepositForm__button button:hover {
+  background-color: #0a2a27;
+  transform: translateY(-2px);
+}
+
+/* =============================== */
+/* Responsive for Laptop Screens    */
+/* =============================== */
+
+/* Laptop screens (1024px to 1440px) */
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .account-scheme-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Adjust gap between fields */
+  }
+
+  .account-field {
+    width: 32%; /* Each field takes 32% of the width */
+  }
+}
+
+/* =============================== */
+/* Responsive for Mobile           */
+/* =============================== */
+
+@media (max-width: 767px) {
+  .FixedDepositForm {
+    padding: 15px;
+  }
+
+  .FixedDepositForm__section {
+    margin-bottom: 15px;
+  }
+
+  .FixedDepositForm__button button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .FixedDepositForm__section.two-inputs input {
+    width: 100%;
+    margin-right: 0;
+  }
+}

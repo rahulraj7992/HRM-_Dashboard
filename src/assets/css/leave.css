@@ -1,0 +1,199 @@
+/* === Layout Wrapper === */
+.leave-wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  margin-left: 18rem; /* assumes sidebar is 240px (60 tailwind units) */
+  margin-top: 20px;
+  min-height: 100vh;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .leave-wrapper {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+/* === Section Layout === */
+.leave-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .leave-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+/* === Form Section === */
+.leave-section {
+  background: #fff;
+  padding: 2rem 1.5rem 2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  flex: 1;
+}
+
+.leave-form-section {
+  max-width: 600px;
+  width: 100%;
+}
+
+.leave-form-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.leave-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.25rem;
+}
+
+.leave-form-group label {
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+.leave-form-group input,
+.leave-form-group textarea,
+.leave-form-group select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: #111827;
+}
+
+.leave-form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.leave-submit-button {
+  background-color: #2563eb;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.leave-submit-button:hover {
+  background-color: #1e40af;
+}
+
+/* === Table Section === */
+.leave-table-section {
+  flex: 1.5;
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+  overflow-x: auto;
+}
+
+.leave-table-section h2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.leave-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+}
+
+.leave-table th,
+.leave-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.leave-table th {
+  background-color: #f3f4f6;
+  color: #374151;
+  font-weight: 600;
+}
+
+.leave-status-badge {
+  padding: 0.4rem 0.7rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: capitalize;
+}
+
+.leave-status-badge.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.leave-status-badge.approved {
+  background-color: #dcfce7;
+  color: #166534;
+}
+
+.leave-status-badge.rejected {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+/* === Responsive Divider Between Sections === */
+@media (min-width: 1024px) {
+  .leave-container {
+    border-left: 4px solid #e5e7eb;
+    padding-left: 2rem;
+  }
+
+  .leave-form-section {
+    border-right: 2px dashed #e5e7eb;
+    padding-right: 2rem;
+  }
+}
+
+/* === Toggle Button for Mobile Table === */
+.leave-toggle-button {
+  position: fixed; /* Position the button fixed on the screen */
+  bottom: 20px; /* Adjust the bottom position */
+  right: 20px; /* Adjust the right position */
+  padding: 8px 12px; /* Make the button smaller */
+  font-size: 12px; /* Reduce font size */
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.leave-toggle-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* === Select Dropdown === */
+.leave-select {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  font-weight: 500;
+}

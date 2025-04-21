@@ -1,0 +1,220 @@
+.holiday-container {
+    padding: 2rem;
+    margin-left: 280px; /* Adjust to match your sidebar */
+    background-color: #f4f6f8;
+    min-height: 100vh;
+    font-family: 'Inter', sans-serif;
+    color: #1f2937;
+    box-sizing: border-box;
+    margin-top: 2rem;
+  }
+  
+  .holiday-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+  }
+  
+  .holiday-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #111827;
+  }
+  
+  .holiday-calendar-wrapper {
+    max-width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+  }
+  
+  .holiday-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+  
+  .holiday-form h4 {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+  
+  .holiday-form input,
+  .holiday-form select {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .holiday-form input:focus,
+  .holiday-form select:focus {
+    border-color: #3b82f6;
+  }
+  
+  .holiday-form button {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    transition: background 0.3s;
+    cursor: pointer;
+  }
+  
+  .holiday-form button:hover {
+    background-color: #2563eb;
+  }
+  
+  .holiday-filters {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  
+  .holiday-filters input,
+  .holiday-filters select {
+    padding: 0.5rem 0.75rem;
+    font-size: 14px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+  }
+  
+  .holiday-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .holiday-card {
+    background: white;
+    border-left: 6px solid #3b82f6;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.2s ease;
+  }
+  
+  .holiday-card:hover {
+    transform: translateY(-3px);
+  }
+  
+  .holiday-card h4 {
+    margin: 0 0 0.5rem;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .holiday-card p {
+    margin: 0;
+    color: #4b5563;
+  }
+  
+  .holiday-badge {
+    margin-top: 0.75rem;
+    display: inline-block;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .holiday-approved {
+    background-color: #ecfdf5;
+    color: #059669;
+    border-left-color: #059669;
+  }
+  
+  .holiday-pending {
+    background-color: #fef3c7;
+    color: #d97706;
+    border-left-color: #d97706;
+  }
+  
+  .holiday-rejected {
+    background-color: #fee2e2;
+    color: #b91c1c;
+    border-left-color: #b91c1c;
+  }
+  
+  .holiday-delete {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    border: none;
+    color: #ef4444;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .holiday-delete:hover {
+    transform: scale(1.1);
+  }
+  
+  .holiday-pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 2rem;
+  }
+  
+  .holiday-page-btn {
+    padding: 8px 14px;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .holiday-page-btn:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .holiday-page-btn.active {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+  }
+  
+  @media (max-width: 768px) {
+    .holiday-container {
+      margin-left: 0;
+      padding: 1rem;
+    }
+  
+    .holiday-form {
+      width: 100%;
+    }
+  
+    .holiday-filters {
+      flex-direction: column;
+    }
+  
+    .holiday-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+  

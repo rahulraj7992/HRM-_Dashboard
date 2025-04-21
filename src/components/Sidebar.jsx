@@ -1,31 +1,133 @@
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import "../assets/css/sidebar.css";
 
 export default function Sidebar() {
   const navigate = useNavigate();
+  const [openSubMenu, setOpenSubMenu] = useState(null);
 
   const menuItems = [
     { icon: "fa fa-home", text: "Dashboard", path: "/dashboard" },
-    { icon: "fa fa-users", text: "Customers", path: "/Customers" },
-    { icon: "fa fa-user", text: "HR Module", path: "/HrModule" },
-    { icon: "fa fa-cog", text: "Settings", path: "/settings" },
-    { icon: "fa fa-file", text: "Reports", path: "/reports" },
-    { icon: "fa fa-envelope", text: "Messages", path: "/messages" },
-    { icon: "fa fa-envelope", text: "Contact Us", path: "/contact" },
+    {
+      icon: "fa fa-users",
+      text: "Customer",
+      subItems: [
+        { text: "Add Customer", path: "/Customers/add" },
+        { text: "View Customers", path: "/Customers" },
+        { text: "Customer KYC", path: "/Customers/kyc" },
+        { text: "Customer Search", path: "/CustomerSearch" },
+      ],
+    },
+    {
+      icon: "fa fa-user",
+      text: "HR Module",
+      subItems: [
+        { text: "Employee Attendance", path: "/EmployeeAttendance" },
+        { text: "Apply Leave", path: "/LeaveForm" },
+        { text: "Holiday List", path: "/Holiday" },
+      ],
+    },
+    {
+      icon: "fa fa-university",
+      text: "Banking",
+      subItems: [
+        {
+          text: "Open Account",
+          path: "/Banking/OpenAccount",
+          icon: "fa fa-folder-open",
+        },
+        {
+          text: "Verify Account",
+          path: "/Banking/VerifyAccount",
+          icon: "fa fa-check-circle",
+        },
+        {
+          text: "RD/DD Report",
+          path: "/Banking/ReportPage",
+          icon: "fa fa-file-alt",
+        },
+        {
+          text: "FD/MIS Report",
+          path: "/Banking/FdMisReport",
+          icon: "fa fa-chart-line",
+        },
+        {
+          text: "Saving Account Report",
+          path: "/Banking/SavingReport",
+          icon: "fa fa-book",
+        },
+        {
+          text: "Close Account",
+          path: "/Banking/CloseAccount",
+          icon: "fa fa-times-circle",
+        },
+        {
+          text: "Calculator",
+          path: "/Banking/Calculator",
+          icon: "fa fa-calculator",
+        },
+        {
+          text: "Make MIS Payment",
+          path: "/Banking/MISPayment",
+          icon: "fa fa-money-check-alt",
+        },
+      ],
+    },
+    {
+      icon: "fa fa-cog",
+      text: "Settings",
+      path: "/UpdatePassword",
+    },
+    {
+      icon: "fa fa-envelope",
+      text: "Contact Us",
+      path: "/Contact",
+    },
   ];
 
+  const handleMainClick = (item, index) => {
+    if (item.subItems) {
+      setOpenSubMenu(openSubMenu === index ? null : index);
+    } else {
+      navigate(item.path);
+    }
+  };
+
   return (
-    <div className="sidebar">
-      {menuItems.map(({ icon, text, path }, index) => (
-        <button
-          key={index}
-          className="flex items-center space-x-2 p-2 md:p-3 hover:bg-gray-200 w-full text-left"
-          onClick={() => navigate(path)}
-        >
-          <i className={icon}></i>
-          <span className="hidden md:inline">{text}</span>
-        </button>
+    <div className="sidebar w-full md:w-60 bg-white shadow-md p-2 md:p-4 h-full">
+      {menuItems.map((item, index) => (
+        <div key={index} className="w-full">
+          <button
+            className="flex items-center space-x-2 p-2 md:p-3 hover:bg-gray-200 w-full text-left transition duration-200"
+            onClick={() => handleMainClick(item, index)}
+          >
+            <i className={item.icon}></i>
+            <span className="hidden md:inline">{item.text}</span>
+            {item.subItems && (
+              <i
+                className={`ml-auto fa ${
+                  openSubMenu === index ? "fa-chevron-up" : "fa-chevron-down"
+                } md:inline hidden`}
+              ></i>
+            )}
+          </button>
+
+          {item.subItems && openSubMenu === index && (
+            <div className="ml-6 md:ml-8 text-sm flex flex-col transition-all duration-200">
+              {item.subItems.map((sub, subIndex) => (
+                <button
+                  key={subIndex}
+                  className="py-1 px-2 text-left hover:bg-gray-100 rounded transition flex items-center space-x-2"
+                  onClick={() => navigate(sub.path)}
+                >
+                  {sub.icon && <i className={`${sub.icon}`}></i>}
+                  <span>{sub.text}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
       ))}
     </div>
   );
-};
+}

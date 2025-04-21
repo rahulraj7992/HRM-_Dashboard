@@ -1,0 +1,242 @@
+.VerifyAccount-wrapper {
+    background-color: #dfe6ed;
+    color: #ffff;
+    padding: 1rem;
+    min-height: 100vh;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Medium screens (tablets) */
+  @media (min-width: 640px) {
+    .VerifyAccount-wrapper {
+      margin-left: 2rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  /* Large screens (small laptops) */
+  @media (min-width: 768px) {
+    .VerifyAccount-wrapper {
+      margin-left: 4rem;
+      margin-right: 4rem;
+    }
+  }
+  
+  /* Extra large screens (desktops) */
+  @media (min-width: 1024px) {
+    .VerifyAccount-wrapper {
+      margin-left: 4rem;
+      margin-right: 2rem;
+    }
+  }
+  
+  /* 2XL screens (large desktops) */
+  @media (min-width: 1280px) {
+    .VerifyAccount-wrapper {
+      margin-left: 18rem;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      border-radius: 0rem;
+    }
+  }
+  
+  .VerifyAccount-account-filter-section,
+  .VerifyAccount-verify-account-section {
+    background-color: #46a7bb;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .VerifyAccount-section-title {
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 20px;
+  }
+  
+  .VerifyAccount-section-subtitle {
+    font-size: 14px;
+    color: #ffff;
+    margin-bottom: 1.25rem;
+  }
+  
+  .VerifyAccount-account-filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2.5rem;
+  }
+  
+  .VerifyAccount-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .VerifyAccount-full-width {
+    grid-column: span 2;
+  }
+  
+  .VerifyAccount-align-bottom {
+    align-self: end;
+  }
+  
+  label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #170202;
+    margin-bottom: 0.5rem;
+  }
+  
+  input,
+  select {
+    background-color: #ffffff;
+    border: 1px solid #1B2A38;
+    border-radius: 6px;
+    padding: 0.75rem 1rem;
+    font-size: 14px;
+    color: #110606;
+    width: 100%;
+  }
+  
+  .VerifyAccount-input-with-icon {
+    position: relative;
+  }
+  
+  .VerifyAccount-calendar-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+    pointer-events: none;
+  }
+  
+  .VerifyAccount-submit-btn {
+    background-color: #15202B;
+    color: #fff;
+    font-weight: 600;
+    width: 20rem;
+    padding: 0.6rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 6px;
+    box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .VerifyAccount-submit-btn:hover {
+    box-shadow: 0 0 15px 4px rgba(255, 255, 255, 0.7);
+  }
+  
+  .VerifyAccount-button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .VerifyAccount-btn {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .VerifyAccount-csv-btn {
+    background-color: #facc15;
+    color: #000;
+  }
+  
+  .VerifyAccount-excel-btn {
+    background-color: #22c55e;
+    color: #fff;
+  }
+  
+  .VerifyAccount-print-btn {
+    background-color: #06b6d4;
+    color: #fff;
+  }
+  
+  .VerifyAccount-entry-control,
+  .VerifyAccount-search-input {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 14px;
+    margin-left: auto;
+  }
+  
+  .VerifyAccount-search-input input {
+    width: 150px;
+  }
+  
+  .VerifyAccount-table-container {
+    overflow-x: auto;
+  }
+  
+  .VerifyAccount-account-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .VerifyAccount-account-table th,
+  .VerifyAccount-account-table td {
+    border: 1px solid #004D40;
+    padding: 0.75rem;
+    text-align: left;
+  }
+  
+  .VerifyAccount-account-table thead {
+    background-color: #004D40;
+    color: white;
+    text-transform: uppercase;
+  }
+  
+  .VerifyAccount-no-data {
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .VerifyAccount-pagination-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  .VerifyAccount-pagination-controls button {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+/* Style for the "Verify" button */
+.VerifyAccount-verify-btn {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .VerifyAccount-verify-btn:hover {
+    background-color: darkgreen;
+  }
+  
+  .VerifyAccount-verify-btn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+  }
+  

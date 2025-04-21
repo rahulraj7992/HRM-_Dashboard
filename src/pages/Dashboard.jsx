@@ -1,7 +1,5 @@
 import "../assets/css/dashboard.css";
-import { FaCalendarDay, FaSun, FaMapMarkerAlt, FaBed, FaCheck, FaTimes,} 
-
-from "react-icons/fa";
+import { FaCalendarDay, FaSun, FaMapMarkerAlt, FaBed, FaCheck, FaTimes,} from "react-icons/fa";
 export function Dashboard() {
   const handleClick = (action) => {
     alert(`Icon clicked: ${action}`);

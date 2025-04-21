@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import "../assets/css/HrModule.css";
 
-const HrModule = () => {
+const HrModule = ({ handleAddCustomer }) => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
   const [showReview, setShowReview] = useState(false);
@@ -48,8 +48,15 @@ const HrModule = () => {
   };
 
   const handleSubmit = () => {
+    // Send data to customer table via prop
+    if (handleAddCustomer) {
+      handleAddCustomer(formData);
+    }
     console.log("Form submitted with data:", formData);
     alert("Form submitted successfully!");
+    setFormData({});
+    setStep(1);
+    setShowReview(false);
   };
 
   const renderReviewData = () => {
@@ -94,7 +101,6 @@ const HrModule = () => {
           <div className="form-section">
             <h2>Personal Details</h2>
             <p>Fill in details to make a user for services access.</p>
-
             <div className="progress-bar">
               <div className="progress-fill" style={{ width: "33%" }}></div>
             </div>
@@ -109,16 +115,14 @@ const HrModule = () => {
                     value={formData.panNumber || ""}
                     onChange={handleChange}
                     type="text"
-                    maxLength="12"
+                    maxLength="10"
                     placeholder="Enter Pan Number"
                   />
                   <button disabled={!!errors.panNumber || !formData.panNumber}>
                     Verify
                   </button>
                 </div>
-                {errors.panNumber && (
-                  <p className="error-text">{errors.panNumber}</p>
-                )}
+                {errors.panNumber && <p className="error-text">{errors.panNumber}</p>}
               </div>
 
               <div>
@@ -138,9 +142,7 @@ const HrModule = () => {
                     Verify
                   </button>
                 </div>
-                {errors.aadharNumber && (
-                  <p className="error-text">{errors.aadharNumber}</p>
-                )}
+                {errors.aadharNumber && <p className="error-text">{errors.aadharNumber}</p>}
               </div>
             </div>
 
@@ -165,6 +167,7 @@ const HrModule = () => {
               <div>
                 <label>Choose Title</label>
                 <select name="title" onChange={handleChange}>
+                  <option>Select</option>
                   <option>Mrs.</option>
                   <option>Mr.</option>
                 </select>
@@ -174,6 +177,7 @@ const HrModule = () => {
                 <select name="gender" onChange={handleChange}>
                   <option>Select</option>
                   <option>Male</option>
+                  <option>Female</option>
                 </select>
               </div>
             </div>
@@ -344,6 +348,7 @@ const HrModule = () => {
               <div>
                 <label>District</label>
                 <select name="district" onChange={handleChange}>
+                  <option>Select</option>
                   <option>Muzaffarpur</option>
                   <option>Sitamarhi</option>
                 </select>
@@ -354,6 +359,7 @@ const HrModule = () => {
               <div>
                 <label>State</label>
                 <select name="state" onChange={handleChange}>
+                  <option>Select</option>
                   <option>Bihar</option>
                   <option>Delhi</option>
                 </select>
@@ -361,6 +367,7 @@ const HrModule = () => {
               <div>
                 <label>Country</label>
                 <select name="country" onChange={handleChange}>
+                  <option>Select</option>
                   <option>India</option>
                   <option>America</option>
                 </select>
@@ -380,6 +387,7 @@ const HrModule = () => {
               <div>
                 <label>Marital Status</label>
                 <select name="maritalStatus" onChange={handleChange}>
+                  <option>Select</option>
                   <option>Single - Not married</option>
                   <option>Married</option>
                 </select>

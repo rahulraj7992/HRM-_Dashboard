@@ -1,0 +1,240 @@
+.customers-container {
+    padding: 20px;
+    margin-top: 50px;
+    margin-left: 280px;
+    margin-right: 50px;
+  }
+  
+  /* Nest Hub / Medium screens (1024px - 1280px) */
+  @media (min-width: 1024px) and (max-width: 1280px) {
+    .customers-container {
+      margin-left: 320px;
+      margin-right: 40px;
+    }
+  }
+  
+  /* Surface Pro 7 (1368px and up) */
+  @media (min-width: 1368px) {
+    .customers-container {
+      margin-left: 360px;
+      margin-right: 60px;
+    }
+  }
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .customers-container {
+      padding: 60px 20px 20px 80px;
+      margin-top: 30px;
+      margin-left: 60px;
+      margin-right: 20px;
+    }
+  }
+  
+  /* Mobile phones */
+  @media (max-width: 480px) {
+    .customers-container {
+      padding: 50px 15px 20px 30px; /* reduced left padding */
+      margin-top: 20px;
+      margin-left: 20px;           /* reduced margin-left */
+      margin-right: 10px;
+    }
+  }
+  
+  .add-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 16px;
+    margin-bottom: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .customers-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+  }
+  
+  .customers-table th,
+  .customers-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+    word-wrap: break-word;
+  }
+  
+  /* Tablets */
+  @media (max-width: 768px) {
+    .customers-table {
+      min-width: 100%;
+    }
+  
+    .customers-table th,
+    .customers-table td {
+      font-size: 14px;
+      padding: 8px;
+    }
+  }
+  
+  /* Phones */
+  @media (max-width: 480px) {
+    .customers-table {
+      min-width: 100%;
+    }
+  
+    .customers-table th,
+    .customers-table td {
+      font-size: 13px;
+      padding: 6px;
+    }
+  }
+  
+  .pdf-icon {
+    color: red;
+    margin-right: 5px;
+  }
+  
+  .actions button {
+    margin-right: 5px;
+    padding: 6px 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  
+  .kyc-btn {
+    background-color: blue;
+    color: white;
+  }
+  
+  .edit-btn {
+    background-color: orange;
+    color: white;
+  }
+  
+  .delete-btn {
+    background-color: red;
+    color: white;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: calc(100% - 100px);
+    max-width: 600px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Small screens modal */
+  @media (max-width: 480px) {
+    .modal {
+      width: calc(100% - 40px);
+      padding: 15px;
+    }
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .close-btn {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .form-group input,
+  .form-group select {
+    padding: 10px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .cancel-btn {
+    background-color: gray;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .submit-btn {
+    background-color: blue;
+    color: white;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .search-input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 250px;
+    font-size: 0.95rem;
+  }
+  
+  
