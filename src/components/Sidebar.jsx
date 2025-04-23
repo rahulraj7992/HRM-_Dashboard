@@ -53,7 +53,7 @@ export default function Sidebar() {
         },
         {
           text: "Saving Account Report",
-          path: "/Banking/SavingReport",
+          path: "/Banking/SavingAccountReport",
           icon: "fa fa-book",
         },
         {
@@ -68,7 +68,7 @@ export default function Sidebar() {
         },
         {
           text: "Make MIS Payment",
-          path: "/Banking/MISPayment",
+          path: "/Banking/MisPayment",
           icon: "fa fa-money-check-alt",
         },
       ],

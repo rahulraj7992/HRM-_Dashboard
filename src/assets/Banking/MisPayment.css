@@ -1,0 +1,191 @@
+.MakeMisPayment-container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding-top: 2rem;
+    margin-left: 1rem; /* Default margin-left */
+  }
+  
+  .MakeMisPayment-form-container {
+    background-color: #1c2a3a;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  
+  .MakeMisPayment-form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 2rem;
+  }
+  
+  .MakeMisPayment-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .MakeMisPayment-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .MakeMisPayment-icon {
+    margin-right: 0.5rem;
+    
+  }
+  
+  .MakeMisPayment-input {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+  
+  .MakeMisPayment-button {
+    background-color: #094322;
+    color: white;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 3rem;
+  }
+  
+  .MakeMisPayment-button:hover {
+    background-color: #123b74;
+    transition: background-color 0.3s;
+  }
+  
+  .MakeMisPayment-table-container {
+    margin-top: 2rem;
+    margin-bottom: 2rem; /* Space below the table section */
+  }
+  
+  .MakeMisPayment-table-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .MakeMisPayment-search-input {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.375rem;
+    width: 20%;
+  }
+  
+  .MakeMisPayment-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .MakeMisPayment-table-header {
+    text-align: left;
+    background-color: #f1f1f1;
+    padding: 1rem;
+    font-weight: bold;
+    border: 1px solid #ddd;
+  }
+  
+  .MakeMisPayment-table-cell {
+    padding: 1rem;
+    border: 1px solid #ddd;
+  }
+  
+  .MakeMisPayment-table-action {
+    background-color: #ff9800;
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .MakeMisPayment-table-row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .MakeMisPayment-pagination {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1rem;
+  }
+  
+  .MakeMisPayment-pagination-button {
+    background-color: #777;
+    color: white;
+    border-radius: 0.375rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .MakeMisPayment-pagination-button:disabled {
+    opacity: 0.5;
+  }
+  
+  .MakeMisPayment-pagination-page {
+    font-size: 1.2rem;
+    margin: 0 1rem;
+  }
+  
+  /* New Buttons in Table Section */
+  .MakeMisPayment-table-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .MakeMisPayment-table-buttons button {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+  }
+  
+  .MakeMisPayment-csv-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .MakeMisPayment-excel-button {
+    background-color: #f39c12; /* Orange */
+    color: white;
+  }
+  
+  .MakeMisPayment-print-button {
+    background-color: #3498db; /* Blue */
+    color: white;
+  }
+  
+  .MakeMisPayment-csv-button:hover,
+  .MakeMisPayment-excel-button:hover,
+  .MakeMisPayment-print-button:hover {
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  /* Space between filter and table sections */
+  .MakeMisPayment-filter-container {
+    margin-bottom: 2rem; /* Space between filter section and table section */
+  }
+  
+  @media screen and (min-width: 1024px) {
+    /* Laptop and bigger screens */
+    .MakeMisPayment-container {
+      margin-left: 4rem; /* Adjust the left margin for larger screens */
+    }
+  }
+  
+  /* Optional: For larger desktop screens */
+  @media screen and (min-width: 1280px) {
+    /* Big screens */
+    .MakeMisPayment-container {
+      margin-left: 20rem; /* Further increase margin for bigger screens */
+    }
+  }
+  
+
+
+
+  

@@ -1,32 +1,32 @@
 import React, { useState } from 'react';
-import '../assets/Banking/ReportPage.css';
+import '../assets/Banking/SavingReport.css';
 
-const FdMisReport = () => {
+const SavingAccountReport = () => {
   const data = [
     {
       sn: 1, acc: 'H02RDF00003', name: 'RAJEEV', guardian: 'BINOD',
       mobile: '7903235505', aadhar: '203634479666', date: '2022-01-17 00:00:00',
-      approved: 'asdfg', due: 'No dues'
+      approved: 'asdfg', due: 'No dues', balance: 12000
     },
     {
       sn: 2, acc: 'H02RDF00006', name: 'kalmI', guardian: 'kasnba',
       mobile: '3214569745', aadhar: '984524984519', date: '2024-01-01 00:00:00',
-      approved: 'asdfg', due: '01 June 2024'
+      approved: 'asdfg', due: '01 June 2024', balance: 20000
     },
     {
       sn: 3, acc: 'H02RDF00005', name: 'kalmI', guardian: 'kasnba',
       mobile: '3214569745', aadhar: '984524984519', date: '2024-01-18 00:00:00',
-      approved: 'asdfg', due: '18 June 2024'
+      approved: 'asdfg', due: '18 June 2024', balance: 18500
     },
     {
       sn: 4, acc: 'H02RDF00004', name: 'kalmI', guardian: 'kasnba',
       mobile: '3214569745', aadhar: '984524984519', date: '2025-01-18 00:00:00',
-      approved: 'asdfg', due: '18 April 2025'
+      approved: 'asdfg', due: '18 April 2025', balance: 22000
     },
     {
       sn: 5, acc: 'H02DD100004', name: 'ankit kumar', guardian: 'rammm',
       mobile: '6207105674', aadhar: '744772892075', date: '2025-03-10 00:00:00',
-      approved: 'asdfg', due: '10 March 2025'
+      approved: 'asdfg', due: '10 March 2025', balance: 25000
     }
   ];
 
@@ -55,7 +55,6 @@ const FdMisReport = () => {
     setCurrentPage(1);
   };
 
-  // Search filtering
   const searchedData = filteredData.filter(row => {
     const term = searchTerm.toLowerCase();
     return (
@@ -72,7 +71,6 @@ const FdMisReport = () => {
 
   return (
     <div className="ReportPage-container">
-      {/* Filter Section */}
       <section className="ReportPage-filter-section">
         <h2 className="ReportPage-section-title">Account Report Filter</h2>
         <p className="ReportPage-section-subtitle">Use filter to see more precise report</p>
@@ -131,7 +129,6 @@ const FdMisReport = () => {
         </form>
       </section>
 
-      {/* Report Table Section */}
       <section className="ReportPage-report-section">
         <h3 className="ReportPage-section-title">Fixed Deposit Report</h3>
 
@@ -142,7 +139,6 @@ const FdMisReport = () => {
             <button className="ReportPage-print-btn"><i className="fas fa-print"></i> Print</button>
           </div>
 
-          {/* Search Box */}
           <div className="ReportPage-search-box">
             <input
               type="text"
@@ -155,7 +151,6 @@ const FdMisReport = () => {
             />
           </div>
 
-          {/* Entries Control */}
           <div className="ReportPage-entries-input">
             <label htmlFor="entries">Show</label>
             <input
@@ -178,19 +173,23 @@ const FdMisReport = () => {
           <table className="ReportPage-report-table">
             <thead>
               <tr>
-                <th>SN</th><th>ACCOUNT</th><th>STATUS</th><th>NAME</th>
-                <th>GUARDIAN</th><th>MOBILE</th><th>AADHAR</th>
-                <th>APPROVAL DATE</th><th>APPROVED BY</th>
+                <th>SN</th>
+                <th>ACCOUNT</th>
+                <th>STATUS</th>
+                <th>NAME</th>
+                <th>GUARDIAN</th>
+                <th>MOBILE</th>
+                <th>AADHAR</th>
+                <th>APPROVAL DATE</th>
+                <th>APPROVED BY</th>
+                <th>BALANCE</th>
               </tr>
             </thead>
             <tbody>
               {currentEntries.map((row, i) => (
                 <tr key={i}>
                   <td>{row.sn}</td>
-                  <td>
-                    {row.acc}<br />
-                    <button className="ReportPage-view-btn">View Details</button>
-                  </td>
+                  <td>{row.acc}</td>
                   <td>Approved</td>
                   <td>{row.name}</td>
                   <td>{row.guardian}</td>
@@ -198,6 +197,7 @@ const FdMisReport = () => {
                   <td>{row.aadhar}</td>
                   <td>{row.date}</td>
                   <td>{row.approved}</td>
+                  <td>₹{row.balance.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
@@ -218,4 +218,4 @@ const FdMisReport = () => {
   );
 };
 
-export default FdMisReport;
+export default SavingAccountReport;

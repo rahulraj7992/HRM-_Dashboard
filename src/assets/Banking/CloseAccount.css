@@ -1,0 +1,200 @@
+/* Full Screen Container */
+.CloseAccount-container {
+    width: 80%; /* Ensure the container stretches to full width */
+    min-height: 100vh; /* Ensure container covers full screen height */
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    overflow-y: auto; /* Allow scrolling when content overflows */
+  }
+  
+  /* Scrollable only for smaller screens */
+  @media (max-width: 1024px) {
+    .CloseAccount-container {
+      max-height: 100vh; /* Restrict the height of the container to 100vh on mobile and tablet */
+      overflow-y: auto; /* Enable vertical scrolling */
+    }
+  }
+  
+  /* Cards with Rounded Corners */
+  .CloseAccount-card {
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  /* Background Colors for Different Sections */
+  .CloseAccount-bg-violet {
+    background-color: #5a2bd9;
+  }
+  
+  .CloseAccount-bg-cyan {
+    background-color: #1db9c3;
+  }
+  
+  .CloseAccount-bg-gradient-yellow-cyan {
+    background: linear-gradient(90deg, #b9b93a 0%, #1db9c3 100%);
+  }
+  
+  .CloseAccount-bg-gradient-cyan-yellow {
+    background: linear-gradient(90deg, #1db9c3 0%, #d9a91f 100%);
+  }
+  
+  /* Input, Select, and Textarea Styles */
+  .CloseAccount-input,
+  .CloseAccount-select{
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 50%;
+    margin-top: 0.25rem;
+  }
+  .CloseAccount-textarea {
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  
+  .CloseAccount-input:focus,
+  .CloseAccount-select:focus,
+  .CloseAccount-textarea:focus {
+    outline: none;
+  }
+  
+  /* Submit Button */
+  .CloseAccount-button {
+    background-color: #3edc3e;
+    color: white;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .CloseAccount-button:hover {
+    background-color: #36b936;
+  }
+  
+  /* Final Amount Style */
+  .CloseAccount-final-amount {
+    background: linear-gradient(to right, #3edc3e, #1db9c3);
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  /* Action Button */
+  .CloseAccount-action-button {
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    border-radius: 9999px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+  }
+  
+  /* Grid Layout for Inputs */
+  .CloseAccount-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+  }
+  
+  /* Table Style */
+  .CloseAccount-table {
+    background-color: white;
+    color: #1a2633;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+  .CloseAccount-table td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+    font-size: 1rem;
+  }
+  
+  /* Subcard with White Background */
+  .CloseAccount-subcard {
+    background-color: white;
+    color: #1db9c3;
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 0.25rem;
+  }
+  
+  /* Custom margin-left for laptop and large screens */
+  @media (min-width: 1024px) {
+    .CloseAccount-container {
+      margin-left: 2rem; /* Custom margin-left for laptops and big screens */
+    }
+  
+    /* Increase text size for headers */
+    .CloseAccount-card h2,
+    .CloseAccount-subcard p,
+    .CloseAccount-grid label,
+    .CloseAccount-action-button,
+    .CloseAccount-final-amount {
+      font-size: 1.25rem; /* Slight increase in text size for laptops and larger screens */
+    }
+  
+    .CloseAccount-button {
+      padding: 1rem 2rem; /* Larger padding for button on larger screens */
+    }
+  }
+  
+  /* Styles for large desktops and extra large screens (screens wider than 1280px) */
+  @media (min-width: 1280px) {
+    .CloseAccount-container {
+      margin-left: 20rem; /* Custom margin-left for bigger screens */
+    }
+  
+    /* Further increase text size for large screens */
+    .CloseAccount-card h2,
+    .CloseAccount-subcard p,
+    .CloseAccount-grid label,
+    .CloseAccount-action-button,
+    .CloseAccount-final-amount {
+      font-size: 1.2rem; /* Increase text size even more for larger screens */
+    }
+  
+    .CloseAccount-button {
+      padding: 1.25rem 2.5rem; /* Even larger button padding for bigger screens */
+    }
+  }
+
+  .CloseAccount-Customer-information {
+    margin-top: 1rem;
+  }
+  
+  .CloseAccount-card {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+  }
+  
+  .CloseAccount-bg-gradient-yellow-cyan {
+    background: linear-gradient(135deg, #f4a261, #2a9d8f);
+  }
+  
+  .CloseAccount-Customer-information p {
+    font-size: 1.125rem; /* Default font size */
+  }
+  
+  .CloseAccount-Customer-information .bold-text {
+    font-weight: bold;
+    font-size: 1.25rem; /* Adjusted font size */
+  }
+  
+  .CloseAccount-Customer-information .bold-text-larger {
+    font-weight: bold;
+    font-size: 1.5rem; /* Larger font size for better emphasis */
+  }
+  

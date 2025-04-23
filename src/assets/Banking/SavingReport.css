@@ -1,0 +1,243 @@
+.ReportPage-container {
+    padding: 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Filter Section */
+  .ReportPage-filter-section {
+    background-color: #2a6672;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ReportPage-section-title {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .ReportPage-section-subtitle {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .ReportPage-filter-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 60px;
+  }
+  
+  .ReportPage-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ReportPage-form-group label {
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .ReportPage-form-group input,
+  .ReportPage-form-group select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  
+  .ReportPage-form-submit {
+    display: flex;
+    align-items: flex-end;
+  }
+  
+  .ReportPage-form-submit button {
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .ReportPage-form-submit button:hover {
+    background-color: #005fa3;
+  }
+  
+  /* Report Section */
+  .ReportPage-report-section {
+    background-color: #2a6672;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .ReportPage-report-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+  
+  .ReportPage-csv-btn,
+  .ReportPage-excel-btn,
+  .ReportPage-print-btn {
+    background-color: #eee;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .ReportPage-csv-btn:hover {
+    background-color: #d9f7e9;
+  }
+  
+  .ReportPage-excel-btn:hover {
+    background-color: #dff0d8;
+  }
+  
+  .ReportPage-print-btn:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .ReportPage-entries-input {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .ReportPage-entries-input input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Table */
+  .ReportPage-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .ReportPage-report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .ReportPage-report-table th,
+  .ReportPage-report-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    color: white;
+  }
+  
+  .ReportPage-report-table th {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  .ReportPage-report-table td {
+    background-color: #2a6672;
+  }
+  
+  /* Button Group */
+  .ReportPage-button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  /* Colored Buttons */
+  .ReportPage-csv-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReportPage-excel-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReportPage-print-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReportPage-csv-btn:hover {
+    background-color: #e67e22;
+  }
+  
+  .ReportPage-excel-btn:hover {
+    background-color: #1e8449;
+  }
+  
+  .ReportPage-print-btn:hover {
+    background-color: #1c6690;
+  }
+  
+  /* Pagination */
+  .ReportPage-pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    font-size: 0.9rem;
+  }
+  
+  .ReportPage-pagination button {
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .ReportPage-pagination button:disabled {
+    color: #aaa;
+    cursor: not-allowed;
+    background-color: #f0f0f0;
+  }
+  
+  /* Responsive */
+  @media (min-width: 1024px) {
+    .ReportPage-container {
+      margin-left: 290px;
+      margin-top: 20px;
+    }
+  }
+  
+  /* Search Input */
+  .ReportPage-search-box {
+    margin-left: auto;
+    padding: 0 1rem;
+  }
+  
+  .ReportPage-search-box input {
+    padding: 0.4rem 0.6rem;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
