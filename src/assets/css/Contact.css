@@ -1,135 +1,131 @@
-/* =============================== */
-/* Fixed Deposit Form Styles       */
-/* =============================== */
-
-.FixedDepositForm {
-  background-color: #d4dce5;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  max-width: 100%;
-  margin: 40px auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.FixedDepositForm__section {
-  margin-bottom: 20px;
+/* Container for the entire contact form */
+.contact-form-container {
+  background-color: #f4f7fa;
+  padding: 40px 20px;
   display: flex;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
-.FixedDepositForm__section label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 6px;
-  font-weight: 600;
-  width: 100%;
+/* Header section for the contact form */
+.contact-form-header {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
-.FixedDepositForm__section input,
-.FixedDepositForm__section select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #fff;
+.contact-form-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
   color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Main content container for the form */
+.contact-form-content {
+  width: 100%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
   font-size: 14px;
-  transition: border-color 0.3s, background-color 0.3s;
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-bottom: 6px;
 }
 
-.FixedDepositForm__section input[readonly] {
-  background-color: #f1f1f1;
-  color: #888;
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9fafb;
+  transition: border-color 0.3s ease;
 }
 
-.FixedDepositForm__section input:focus,
-.FixedDepositForm__section select:focus {
+.form-group input:focus,
+.form-group textarea:focus {
   border-color: #3b82f6;
-  background-color: #e0e0e0;
   outline: none;
 }
 
-/* =============================== */
-/* Account Type, Scheme, and ROI (Single Row) */
-/* =============================== */
-
-/* For the account type, scheme, and ROI fields */
-.account-scheme-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px; /* Adjust gap between fields */
+.form-group textarea {
+  resize: vertical;
+  min-height: 150px;
 }
 
-.account-field {
-  width: 32%; /* Each field takes 32% of the width */
-}
-
-.account-field select,
-.account-field input {
-  width: 100%;
-}
-
-.FixedDepositForm__button {
+/* Styling for the contact icons */
+.contact-icons {
   display: flex;
   justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.FixedDepositForm__button button {
-  background-color: #0f3c3a;
+.contact-icons .whatsapp-icon,
+.contact-icons .email-icon {
+  font-size: 2.5rem;
+  color: #25d366; /* WhatsApp color */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.contact-icons .whatsapp-icon:hover,
+.contact-icons .email-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Submit button styling */
+.contact-actions button {
+  background-color: #318695;
   color: white;
   font-weight: bold;
   padding: 12px 24px;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 16px;
-  transition: background-color 0.3s, transform 0.2s;
+  transition: background-color 0.3s ease, transform 0.2s;
+  width: 100%;
 }
 
-.FixedDepositForm__button button:hover {
+.contact-actions button:hover {
   background-color: #0a2a27;
   transform: translateY(-2px);
 }
 
-/* =============================== */
-/* Responsive for Laptop Screens    */
-/* =============================== */
-
-/* Laptop screens (1024px to 1440px) */
-@media (min-width: 1024px) and (max-width: 1440px) {
-  .account-scheme-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Adjust gap between fields */
-  }
-
-  .account-field {
-    width: 32%; /* Each field takes 32% of the width */
-  }
-}
-
-/* =============================== */
-/* Responsive for Mobile           */
-/* =============================== */
-
+/* Responsive styles for smaller screens */
 @media (max-width: 767px) {
-  .FixedDepositForm {
-    padding: 15px;
+  .contact-form-container {
+    padding: 20px 10px;
   }
 
-  .FixedDepositForm__section {
-    margin-bottom: 15px;
-  }
-
-  .FixedDepositForm__button button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .FixedDepositForm__section.two-inputs input {
+  .contact-form-content {
     width: 100%;
-    margin-right: 0;
+    padding: 1.5rem;
+  }
+
+  .contact-icons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-actions button {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }

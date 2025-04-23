@@ -12,65 +12,33 @@ export default function Sidebar() {
       icon: "fa fa-users",
       text: "Customer",
       subItems: [
-        { text: "Add Customer", path: "/Customers/add" },
-        { text: "View Customers", path: "/Customers" },
-        { text: "Customer KYC", path: "/Customers/kyc" },
-        { text: "Customer Search", path: "/CustomerSearch" },
+        { text: "Add Customer", path: "/Customers/add", icon: "fa fa-user-plus" },
+        { text: "View Customers", path: "/Customers", icon: "fa fa-users" },
+        { text: "Customer KYC", path: "/Customers/kyc", icon: "fa fa-id-card" },
+        { text: "Customer Search", path: "/CustomerSearch", icon: "fa fa-search" },
       ],
     },
     {
       icon: "fa fa-user",
       text: "HR Module",
       subItems: [
-        { text: "Employee Attendance", path: "/EmployeeAttendance" },
-        { text: "Apply Leave", path: "/LeaveForm" },
-        { text: "Holiday List", path: "/Holiday" },
+        { text: "Employee Attendance", path: "/EmployeeAttendance", icon: "fa fa-calendar-check" },
+        { text: "Apply Leave", path: "/LeaveForm", icon: "fa fa-clipboard-check" },
+        { text: "Holiday List", path: "/Holiday", icon: "fa fa-calendar-alt" },
       ],
     },
     {
       icon: "fa fa-university",
       text: "Banking",
       subItems: [
-        {
-          text: "Open Account",
-          path: "/Banking/OpenAccount",
-          icon: "fa fa-folder-open",
-        },
-        {
-          text: "Verify Account",
-          path: "/Banking/VerifyAccount",
-          icon: "fa fa-check-circle",
-        },
-        {
-          text: "RD/DD Report",
-          path: "/Banking/ReportPage",
-          icon: "fa fa-file-alt",
-        },
-        {
-          text: "FD/MIS Report",
-          path: "/Banking/FdMisReport",
-          icon: "fa fa-chart-line",
-        },
-        {
-          text: "Saving Account Report",
-          path: "/Banking/SavingAccountReport",
-          icon: "fa fa-book",
-        },
-        {
-          text: "Close Account",
-          path: "/Banking/CloseAccount",
-          icon: "fa fa-times-circle",
-        },
-        {
-          text: "Calculator",
-          path: "/Banking/Calculator",
-          icon: "fa fa-calculator",
-        },
-        {
-          text: "Make MIS Payment",
-          path: "/Banking/MisPayment",
-          icon: "fa fa-money-check-alt",
-        },
+        { text: "Open Account", path: "/Banking/OpenAccount", icon: "fa fa-folder-open" },
+        { text: "Verify Account", path: "/Banking/VerifyAccount", icon: "fa fa-check-circle" },
+        { text: "RD/DD Report", path: "/Banking/ReportPage", icon: "fa fa-file-alt" },
+        { text: "FD/MIS Report", path: "/Banking/FdMisReport", icon: "fa fa-chart-line" },
+        { text: "Saving Account Report", path: "/Banking/SavingAccountReport", icon: "fa fa-book" },
+        { text: "Close Account", path: "/Banking/CloseAccount", icon: "fa fa-times-circle" },
+        { text: "Calculator", path: "/Banking/Calculator", icon: "fa fa-calculator" },
+        { text: "Make MIS Payment", path: "/Banking/MisPayment", icon: "fa fa-money-check-alt" },
       ],
     },
     {
@@ -81,6 +49,11 @@ export default function Sidebar() {
     {
       icon: "fa fa-envelope",
       text: "Contact Us",
+      path: "/Contact",
+    },
+    {
+      icon: " ",
+      text: " ",
       path: "/Contact",
     },
   ];

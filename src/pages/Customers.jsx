@@ -110,9 +110,9 @@ const Customers = () => {
       {alert && <div className="alert-message">{alert}</div>}
 
       <div className="top-bar">
-        <button className="add-btn" onClick={() => handleOpenForm()}>
+        {/* <button className="add-btn" onClick={() => handleOpenForm()}>
           <FaPlus /> Add Customer
-        </button>
+        </button> */}
         <input
           type="text"
           placeholder="Search customers..."
