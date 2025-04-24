@@ -1,13 +1,41 @@
-import "../assets/css/dashboard.css";
-import { FaCalendarDay, FaSun, FaMapMarkerAlt, FaBed, FaCheck, FaTimes,} from "react-icons/fa";
-export function Dashboard() {
-  const handleClick = (action) => {
+import React, { useEffect, useState } from 'react';
+import { auth } from '../Firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import '../assets/css/dashboard.css';
+import {
+  FaCalendarDay,
+  FaSun,
+  FaMapMarkerAlt,
+  FaBed,
+  FaCheck,
+  FaTimes
+} from 'react-icons/fa';
+
+export default function Dashboard() {
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, u => {
+      if (u) setUser(u);
+      else navigate('/login');
+    });
+    return unsubscribe;
+  }, [navigate]);
+
+ 
+
+  const handleClick = action => {
     alert(`Icon clicked: ${action}`);
   };
+
+  if (!user) return null;  // or a loading spinner
 
   return (
     <div className="container">
       <h1 className="title">Dashboard</h1>
+
       {/* Summary Cards */}
       <div className="summary-cards">
         <div className="card">
@@ -45,28 +73,13 @@ export function Dashboard() {
         <h2>Recent Applications (8)</h2>
         <div className="applications-row">
           {[
-            {
-              name: "Hiren Chauhan",
-              type: "Leave",
-              date: "15 Feb",
-              days: "25 Days",
-            },
-            {
-              name: "Snehal Shah",
-              type: "On Duty",
-              date: "07 Mar",
-              days: "1 Day",
-            },
-            {
-              name: "Maulin Pandya",
-              type: "C-Off",
-              date: "07 Mar",
-              days: "1 Day",
-            },
+            { name: "Hiren Chauhan", type: "Leave", date: "15 Feb", days: "25 Days" },
+            { name: "Snehal Shah", type: "On Duty", date: "07 Mar", days: "1 Day" },
+            { name: "Maulin Pandya", type: "C-Off", date: "07 Mar", days: "1 Day" }
           ].map((app, index) => (
             <div className="application single-row" key={index}>
               <img
-                src={`https://sl.bing.net/iRsRVmpdAC4`}
+                src="https://sl.bing.net/iRsRVmpdAC4"
                 alt="profile"
                 className="profile-pic"
               />
@@ -79,11 +92,11 @@ export function Dashboard() {
               <div className="icons">
                 <FaCheck
                   className="icon green me-2 rounded-circle clickable"
-                  onClick={() => handleClick("Approved")}
+                  onClick={() => handleClick('Approved')}
                 />
                 <FaTimes
                   className="icon red rounded-circle clickable"
-                  onClick={() => handleClick("Rejected")}
+                  onClick={() => handleClick('Rejected')}
                 />
               </div>
             </div>
@@ -95,26 +108,24 @@ export function Dashboard() {
       <div className="employee-status">
         <div className="on-leave">
           <h2>Employee’s on Leave (6)</h2>
-          {["Mahakrishna Lohar", "Ashvinpuri G Swami", "Ashish Kalra"].map(
-            (name, index) => (
-              <div className="employee" key={index}>
-                <img
-                  src={`https://via.placeholder.com/40`}
-                  alt="profile"
-                  className="profile-pic"
-                />
-                <p>{name}</p>
-                <p>{index + 1} Day(s)</p>
-              </div>
-            )
-          )}
+          {['Mahakrishna Lohar', 'Ashvinpuri G Swami', 'Ashish Kalra'].map((name, i) => (
+            <div className="employee" key={i}>
+              <img
+                src="https://via.placeholder.com/40"
+                alt="profile"
+                className="profile-pic"
+              />
+              <p>{name}</p>
+              <p>{i + 1} Day(s)</p>
+            </div>
+          ))}
         </div>
         <div className="on-duty">
           <h2>Employee’s on Duty (4)</h2>
-          {["Snaunak Mistry", "Jay Patel", "Snehal Shah"].map((name, index) => (
-            <div className="employee" key={index}>
+          {['Snaunak Mistry', 'Jay Patel', 'Snehal Shah'].map((name, i) => (
+            <div className="employee" key={i}>
               <img
-                src={`https://via.placeholder.com/40`}
+                src="https://via.placeholder.com/40"
                 alt="profile"
                 className="profile-pic"
               />
@@ -124,6 +135,8 @@ export function Dashboard() {
           ))}
         </div>
       </div>
+
+      
     </div>
   );
 }

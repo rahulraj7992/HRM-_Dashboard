@@ -8,7 +8,7 @@ export default function Header() {
 
   const handleLogout = () => {
     localStorage.removeItem("isAuthenticated"); // Remove authentication flag
-    navigate("/signin"); // Redirect to Sign In page
+    navigate("/login"); // Redirect to Sign In page
   };
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { FaPlus, FaEdit, FaIdCard, FaTrash } from "react-icons/fa";
+import { FaEdit, FaIdCard, FaTrash } from "react-icons/fa";
 import "../assets/css/Customers.css";
 
 const Customers = () => {
