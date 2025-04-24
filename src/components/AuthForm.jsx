@@ -5,7 +5,6 @@ import {
 } from 'firebase/auth';
 import { auth } from '../Firebase';
 import { useNavigate } from 'react-router-dom';
-import '../assets/css/authform.css'; // Make sure this path is correct
 
 export default function AuthForm({ mode }) {
   const [email, setEmail]       = useState('');
@@ -38,8 +37,8 @@ export default function AuthForm({ mode }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="authform-container">
-      <h2 className="authform-title">
+    <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-20 p-6 space-y-4 bg-white shadow-lg rounded">
+      <h2 className="text-2xl font-semibold text-center">
         {mode === 'signup' ? 'Sign Up' : 'Log In'}
       </h2>
 
@@ -50,7 +49,7 @@ export default function AuthForm({ mode }) {
         value={email}
         onChange={e => setEmail(e.target.value)}
         required
-        className="authform-input"
+        className="w-full p-2 border rounded"
       />
 
       <input
@@ -60,37 +59,40 @@ export default function AuthForm({ mode }) {
         value={password}
         onChange={e => setPassword(e.target.value)}
         required
-        className="authform-input"
+        className="w-full p-2 border rounded"
       />
 
-      {error && <p className="authform-error">{error}</p>}
+      {error && <p className="text-red-500 text-sm">{error}</p>}
       {success && (
-        <p className="authform-success">
+        <p className="text-green-600 text-sm">
           {success}{' '}
           <button
             type="button"
             onClick={() => navigate('/login')}
-            className="authform-link ml-1"
+            className="text-blue-600 underline ml-1"
           >
             Go to Login
           </button>
         </p>
       )}
 
-      <button type="submit" className="authform-button">
+      <button
+        type="submit"
+        className="w-full py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
         {mode === 'signup' ? 'Create Account' : 'Log In'}
       </button>
 
-      <p className="authform-footer">
+      <p className="text-sm text-center mt-2">
         {mode === 'signup' ? 'Already have an account?' : "Don't have an account?"}{' '}
         <button
           type="button"
           onClick={toggleMode}
-          className="authform-link"
+          className="text-blue-600 underline"
         >
           {mode === 'signup' ? 'Log In' : 'Sign Up'}
         </button>
       </p>
     </form>
   );
-}
+} 
