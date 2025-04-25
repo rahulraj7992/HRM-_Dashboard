@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "../assets/css/KycForm.css"; // Assuming you're importing your CSS file
 
 const documentTypes = [
   "Aadhaar Card",
@@ -11,45 +12,58 @@ const documentTypes = [
 
 const KycForm = () => {
   const [userId, setUserId] = useState("");
+  const [form, setForm] = useState({ docType: "", docNumber: "", file: null });
   const [documents, setDocuments] = useState([]);
-  const [form, setForm] = useState({
-    docType: "",
-    docNumber: "",
-    docFile: null,
-  });
   const [editingIndex, setEditingIndex] = useState(null);
 
   const handleFileChange = (e) => {
-    setForm({ ...form, docFile: e.target.files[0] });
+    setForm({ ...form, file: e.target.files[0] });
   };
 
-  const handleAddOrUpdateDocument = (e) => {
+  const handleAddOrUpdateDocument = async (e) => {
     e.preventDefault();
-    const { docType, docNumber, docFile } = form;
 
-    if (!docType || !docNumber || !docFile) {
-      alert("Please fill all document fields");
+    // Validation check for required fields
+    if (!form.docType || !form.docNumber || (!form.file && editingIndex === null)) {
+      alert("Please fill in all fields.");
       return;
     }
 
+    const fileToUse = form.file;
+    let fileData = null;
+
+    if (fileToUse) {
+      fileData = await readFileAsBase64(fileToUse);
+    }
+
     const newDoc = {
-      docType,
-      docNumber,
-      fileName: docFile.name,
-      fileUrl: URL.createObjectURL(docFile),
-      rawFile: docFile,
+      docType: form.docType,
+      docNumber: form.docNumber,
+      fileName: fileToUse ? fileToUse.name : documents[editingIndex].fileName,
+      fileUrl: fileData || documents[editingIndex].fileUrl,
     };
 
     const updatedDocs = [...documents];
+
+    // If editing, update the document at editingIndex, else add new document
     if (editingIndex !== null) {
       updatedDocs[editingIndex] = newDoc;
+      setEditingIndex(null);
     } else {
       updatedDocs.push(newDoc);
     }
 
     setDocuments(updatedDocs);
-    setForm({ docType: "", docNumber: "", docFile: null });
-    setEditingIndex(null);
+    setForm({ docType: "", docNumber: "", file: null });
+  };
+
+  const readFileAsBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
   };
 
   const handleEdit = (index) => {
@@ -57,73 +71,68 @@ const KycForm = () => {
     setForm({
       docType: doc.docType,
       docNumber: doc.docNumber,
-      docFile: null,
+      file: null, // Don't preload the file
     });
     setEditingIndex(index);
   };
 
   const handleDelete = (index) => {
-    const updated = [...documents];
-    updated.splice(index, 1);
-    setDocuments(updated);
-    if (editingIndex === index) {
-      setEditingIndex(null);
-      setForm({ docType: "", docNumber: "", docFile: null });
-    }
+    const updatedDocs = documents.filter((_, i) => i !== index);
+    setDocuments(updatedDocs);
+    setEditingIndex(null);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!userId || documents.length === 0) {
-      alert("Please enter User ID and upload at least one document.");
+      alert("Please enter User ID and add at least one document.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("userId", userId);
-    documents.forEach((doc, idx) => {
-      formData.append(`documents[${idx}][type]`, doc.docType);
-      formData.append(`documents[${idx}][number]`, doc.docNumber);
-      formData.append(`documents[${idx}][file]`, doc.rawFile);
-    });
-
     try {
-      const response = await axios.post("http://localhost/api/kyc/upload", formData);
-      if (response.data.success) {
-        alert("Documents uploaded successfully!");
-        setUserId("");
-        setDocuments([]);
-      } else {
-        alert("Upload failed.");
-      }
-    } catch (err) {
-      console.error("Upload error", err);
-      alert("Something went wrong.");
+      const payload = {
+        userId,
+        documents: documents.map((doc) => ({
+          docType: doc.docType,
+          docNumber: doc.docNumber,
+          file: doc.fileUrl,
+        })),
+      };
+
+      await axios.post("/api/kyc-documents", payload);
+
+      alert("KYC documents submitted successfully!");
+      setUserId("");
+      setDocuments([]);
+      setForm({ docType: "", docNumber: "", file: null });
+      setEditingIndex(null);
+    } catch (error) {
+      console.error("Error submitting documents:", error);
+      alert("You are Editing the Data of user.");
     }
   };
 
   return (
-    <div style={styles.page}>
-      <div style={styles.container}>
-        <h2 style={styles.header}>KYC Document Upload</h2>
-
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.formGroup}>
+    <div className="kyc-page">
+      <div className="kyc-container">
+        <h2 className="kyc-header">KYC Document Upload</h2>
+        <form onSubmit={handleSubmit} className="kyc-form">
+          <div className="kyc-form-group">
             <label>User ID:</label>
             <input
               type="text"
               value={userId}
               onChange={(e) => setUserId(e.target.value)}
               placeholder="Enter User ID"
-              style={styles.input}
+              className="kyc-input"
             />
           </div>
 
-          <div style={styles.formRow}>
+          <div className="kyc-form-row">
             <select
               value={form.docType}
               onChange={(e) => setForm({ ...form, docType: e.target.value })}
-              style={styles.select}
+              className="kyc-select"
             >
               <option value="">Select Document Type</option>
               {documentTypes.map((type, i) => (
@@ -137,14 +146,20 @@ const KycForm = () => {
               type="text"
               placeholder="Enter Document Number"
               value={form.docNumber}
-              onChange={(e) => setForm({ ...form, docNumber: e.target.value })}
-              style={styles.input}
+              onChange={(e) =>
+                setForm({ ...form, docNumber: e.target.value })
+              }
+              className="kyc-input"
             />
 
-            <input type="file" onChange={handleFileChange} style={styles.inputFile} />
+            <input
+              type="file"
+              onChange={handleFileChange}
+              className="kyc-input-file"
+            />
 
-            <button style={styles.buttonSecondary} onClick={handleAddOrUpdateDocument}>
-              {editingIndex !== null ? "Update" : "Add"}
+            <button className="kyc-btn-secondary" onClick={handleAddOrUpdateDocument}>
+              {editingIndex !== null ? "Update Document" : "Add Document"}
             </button>
           </div>
 
@@ -153,7 +168,7 @@ const KycForm = () => {
             {documents.length === 0 ? (
               <p>No documents uploaded.</p>
             ) : (
-              <table style={styles.table}>
+              <table className="kyc-table">
                 <thead>
                   <tr>
                     <th>Type</th>
@@ -169,18 +184,32 @@ const KycForm = () => {
                       <td>{doc.docNumber}</td>
                       <td>
                         {doc.fileName.endsWith(".pdf") ? (
-                          <a href={doc.fileUrl} target="_blank" rel="noopener noreferrer">
+                          <a
+                            href={doc.fileUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
                             View PDF
                           </a>
                         ) : (
-                          <img src={doc.fileUrl} alt={doc.docType} style={styles.preview} />
+                          <img
+                            src={doc.fileUrl}
+                            alt={doc.docType}
+                            className="kyc-preview"
+                          />
                         )}
                       </td>
                       <td>
-                        <button onClick={() => handleEdit(idx)} style={styles.actionBtn}>
+                        <button
+                          onClick={() => handleEdit(idx)}
+                          className="kyc-edit-btn"
+                        >
                           Edit
                         </button>
-                        <button onClick={() => handleDelete(idx)} style={styles.deleteBtn}>
+                        <button
+                          onClick={() => handleDelete(idx)}
+                          className="kyc-delete-btn"
+                        >
                           Delete
                         </button>
                       </td>
@@ -193,12 +222,13 @@ const KycForm = () => {
 
           <button
             type="submit"
+            className="kyc-btn-primary"
+            disabled={documents.length === 0}
             style={{
-              ...styles.buttonPrimary,
               opacity: documents.length === 0 ? 0.6 : 1,
               cursor: documents.length === 0 ? "not-allowed" : "pointer",
+              marginTop: "30px",
             }}
-            disabled={documents.length === 0}
           >
             Submit All Documents
           </button>
@@ -206,104 +236,6 @@ const KycForm = () => {
       </div>
     </div>
   );
-};
-
-const styles = {
-  page: {
-    minHeight: "100vh",
-    width: "100%",
-    background: "linear-gradient(135deg, #f3f4f6, #e5e7eb)", // Soft gray gradient background
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    padding: "20px",
-  },
-  container: {
-    maxWidth: "960px",
-    margin: "20px auto", // Reduced top margin
-    padding: "30px",
-    border: "1px solid #ddd",
-    borderRadius: "12px",
-    backgroundColor: "#fff",
-    boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
-  }
-  ,
-  header: {
-    textAlign: "center",
-    marginBottom: "40px",
-  },
-  form: {
-    display: "flex",
-    flexDirection: "column",
-    gap: "20px",
-  },
-  formGroup: {
-    display: "flex",
-    flexDirection: "column",
-  },
-  formRow: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "10px",
-    alignItems: "center",
-  },
-  input: {
-    padding: "10px",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-    flex: 1,
-    minWidth: "180px",
-  },
-  select: {
-    padding: "10px",
-    borderRadius: "5px",
-    border: "1px solid #ccc",
-    minWidth: "200px",
-  },
-  inputFile: {
-    flex: 1,
-    minWidth: "200px",
-  },
-  buttonPrimary: {
-    padding: "12px 20px",
-    backgroundColor: "#28a745",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-    fontSize: "16px",
-  },
-  buttonSecondary: {
-    padding: "10px 15px",
-    backgroundColor: "#007bff",
-    color: "white",
-    border: "none",
-    borderRadius: "5px",
-  },
-  table: {
-    width: "100%",
-    borderCollapse: "collapse",
-    marginTop: "10px",
-  },
-  preview: {
-    height: "40px",
-    width: "auto",
-    borderRadius: "3px",
-  },
-  actionBtn: {
-    marginRight: "10px",
-    backgroundColor: "#ffc107",
-    border: "none",
-    padding: "6px 12px",
-    borderRadius: "3px",
-    color: "#000",
-  },
-  deleteBtn: {
-    backgroundColor: "#dc3545",
-    border: "none",
-    padding: "6px 12px",
-    borderRadius: "3px",
-    color: "white",
-  },
 };
 
 export default KycForm;

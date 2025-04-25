@@ -51,11 +51,6 @@ export default function Sidebar() {
       text: "Contact Us",
       path: "/Contact",
     },
-    {
-      icon: " ",
-      text: " ",
-      path: "/Contact",
-    },
   ];
 
   const handleMainClick = (item, index) => {
@@ -67,40 +62,41 @@ export default function Sidebar() {
   };
 
   return (
-    <div className="sidebar w-full md:w-60 bg-white shadow-md p-2 md:p-4 h-full">
-      {menuItems.map((item, index) => (
-        <div key={index} className="w-full">
-          <button
-            className="flex items-center space-x-2 p-2 md:p-3 hover:bg-gray-200 w-full text-left transition duration-200"
-            onClick={() => handleMainClick(item, index)}
-          >
-            <i className={item.icon}></i>
-            <span className="hidden md:inline">{item.text}</span>
-            {item.subItems && (
-              <i
-                className={`ml-auto fa ${
-                  openSubMenu === index ? "fa-chevron-up" : "fa-chevron-down"
-                } md:inline hidden`}
-              ></i>
-            )}
-          </button>
+    <div className="sidebar w-full sm:w-56 md:w-60 lg:w-64 xl:w-72 bg-white shadow-md h-screen overflow-y-auto fixed top-0 left-0 z-50">
+      <div className="p-2 md:p-4 flex flex-col gap-1">
+        {menuItems.map((item, index) => (
+          <div key={index} className="w-full">
+            <button
+              className="flex items-center justify-start space-x-3 p-2 md:p-3 hover:bg-gray-200 w-full text-left transition duration-200"
+              onClick={() => handleMainClick(item, index)}
+            >
+              <i className={`${item.icon} text-lg min-w-[20px]`}></i>
+              <span className="hidden sm:inline text-sm md:text-base">{item.text}</span>
+              {item.subItems && (
+                <i
+                  className={`ml-auto fa ${
+                    openSubMenu === index ? "fa-chevron-up" : "fa-chevron-down"
+                  } hidden sm:inline`}></i>
+              )}
+            </button>
 
-          {item.subItems && openSubMenu === index && (
-            <div className="ml-6 md:ml-8 text-sm flex flex-col transition-all duration-200">
-              {item.subItems.map((sub, subIndex) => (
-                <button
-                  key={subIndex}
-                  className="py-1 px-2 text-left hover:bg-gray-100 rounded transition flex items-center space-x-2"
-                  onClick={() => navigate(sub.path)}
-                >
-                  {sub.icon && <i className={`${sub.icon}`}></i>}
-                  <span>{sub.text}</span>
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+            {item.subItems && openSubMenu === index && (
+              <div className="ml-6 sm:ml-8 text-sm flex flex-col transition-all duration-200">
+                {item.subItems.map((sub, subIndex) => (
+                  <button
+                    key={subIndex}
+                    className="py-1 px-2 text-left hover:bg-gray-100 rounded transition flex items-center space-x-2"
+                    onClick={() => navigate(sub.path)}
+                  >
+                    <i className={`${sub.icon} text-sm`}></i>
+                    <span className="text-xs sm:text-sm">{sub.text}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

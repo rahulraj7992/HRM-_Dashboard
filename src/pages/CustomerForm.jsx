@@ -166,7 +166,7 @@ const CustomerForm = () => {
                           className={getFieldClass("panNumber")}
                           placeholder="Enter Pan Number"
                         />
-                        <button disabled={!!errors.panNumber || !formData.panNumber}>Verify</button>
+                        {/* <button disabled={!!errors.panNumber || !formData.panNumber}>Verify</button> */}
                       </div>
                       {renderError("panNumber")}
                     </div>
@@ -183,9 +183,9 @@ const CustomerForm = () => {
                           className={getFieldClass("aadharNumber")}
                           placeholder="Enter Aadhar Number"
                         />
-                        <button disabled={!!errors.aadharNumber || !formData.aadharNumber}>
+                        {/* <button disabled={!!errors.aadharNumber || !formData.aadharNumber}>
                           Verify
-                        </button>
+                        </button> */}
                       </div>
                       {renderError("aadharNumber")}
                     </div>

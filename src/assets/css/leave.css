@@ -6,14 +6,20 @@
   margin-left: 18rem; /* assumes sidebar is 240px (60 tailwind units) */
   margin-top: 20px;
   min-height: 100vh;
+  max-height: 100vh; /* Ensure it doesn't exceed viewport height */
   background-color: #f9fafb;
   box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden; /* Prevent unwanted horizontal scroll */
 }
 
 @media (max-width: 768px) {
   .leave-wrapper {
     margin-left: 0;
     padding: 1rem;
+    height: 100vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scroll for iOS */
   }
 }
 
@@ -170,24 +176,23 @@
 
 /* === Toggle Button for Mobile Table === */
 .leave-toggle-button {
-  position: fixed; /* Position the button fixed on the screen */
-  bottom: 20px; /* Adjust the bottom position */
-  right: 20px; /* Adjust the right position */
-  padding: 8px 12px; /* Make the button smaller */
-  font-size: 12px; /* Reduce font size */
-  background-color: #4caf50; /* Green background color */
-  color: white; /* White text */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add some shadow for better visibility */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s; /* Smooth transition for background color */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  font-size: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .leave-toggle-button:hover {
-  background-color: #45a049; /* Darker green on hover */
+  background-color: #45a049;
 }
-
 
 /* === Select Dropdown === */
 .leave-select {

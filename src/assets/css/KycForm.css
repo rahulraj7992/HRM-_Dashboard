@@ -1,0 +1,194 @@
+.kyc-page {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .kyc-container {
+    max-width: 960px;
+    width: 100%;
+    margin: 20px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .kyc-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .kyc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .kyc-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .kyc-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .kyc-input,
+  .kyc-select,
+  .kyc-input-file {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    flex: 1;
+    min-width: 180px;
+    font-size: 1rem;
+  }
+  
+  .kyc-select {
+    min-width: 200px;
+  }
+  
+  .kyc-input-file {
+    min-width: 200px;
+  }
+  
+  .kyc-btn-primary {
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .kyc-btn-secondary {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .kyc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .kyc-table th,
+  .kyc-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .kyc-preview {
+    height: 40px;
+    width: auto;
+    border-radius: 3px;
+  }
+  
+  .kyc-edit-btn {
+    margin-right: 10px;
+    background-color: #ffc107;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    color: #000;
+  }
+  
+  .kyc-delete-btn {
+    background-color: #dc3545;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 3px;
+    color: white;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .kyc-container {
+      padding: 20px;
+      margin-left: 120px; /* Custom margin-left for screens between 768px and 651px */
+      margin-right: 20px;
+    }
+  
+    .kyc-form-row {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+  
+  @media (max-width: 651px) and (min-width: 517px) {
+    .kyc-container {
+      padding: 25px;
+      margin-left: 40px; /* Custom margin-left for screens between 651px and 517px */
+      margin-right: 20px;
+    }
+  
+    .kyc-input,
+    .kyc-select,
+    .kyc-input-file {
+      font-size: 1rem; /* Keeping the font size the same, adjust as needed */
+    }
+  
+    .kyc-form {
+      width: 85%; /* Increase width for screen sizes between 768px and 651px */
+    }
+  
+    .kyc-btn-primary,
+    .kyc-btn-secondary {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 1300px) and (min-width: 769px) {
+    .kyc-container {
+      padding: 10px;
+      margin-left:20rem; /* Increased margin-left for screens between 1300px and 769px */
+      margin-right: 10px;
+    }
+  
+    .kyc-form {
+      width: 90%; /* Adjust width for better form spacing */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .kyc-container {
+      padding: 15px;
+      margin: 10px;
+    }
+  
+    .kyc-header {
+      font-size: 20px;
+    }
+  
+    .kyc-input,
+    .kyc-select,
+    .kyc-input-file {
+      font-size: 14px;
+    }
+  
+    .kyc-btn-primary,
+    .kyc-btn-secondary {
+      width: 100%;
+    }
+  
+    .kyc-edit-btn,
+    .kyc-delete-btn {
+      margin: 5px 0;
+      width: 100%;
+    }
+  }
+  
