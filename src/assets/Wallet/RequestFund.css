@@ -1,0 +1,208 @@
+.WalletRequestFund-container {
+    background-color: #f2f4f8;
+    padding: 24px;
+    max-height: 100vh;
+    font-family: sans-serif;
+    overflow-y: auto;
+
+  }
+  
+  .WalletRequestFund-box {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .WalletRequestFund-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 16px;
+  }
+  
+  .WalletRequestFund-icon {
+    background: #2a64f4;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .WalletRequestFund-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:3rem;
+    margin-right: 2rem;
+  }
+  
+  .WalletRequestFund-form label {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 4px;
+    display: block;
+  }
+  
+  .WalletRequestFund-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  .WalletRequestFund-full {
+    grid-column: span 2;
+
+  }
+  
+  .WalletRequestFund-submit {
+    background-color: #2a64f4;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .WalletRequestFund-submit:hover {
+    background-color: #244fc1;
+  }
+  
+  .WalletRequestFund-date {
+    position: relative;
+  }
+  
+  .WalletRequestFund-dateIcon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+  
+  .WalletRequestFund-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .WalletRequestFund-buttons {
+    display: flex;
+    gap: 8px;
+  }
+  
+  .WalletRequestFund-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 4px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .WalletRequestFund-csv {
+    background-color: #facc15;
+  }
+  .WalletRequestFund-csv:hover {
+    background-color: #eab308;
+  }
+  
+  .WalletRequestFund-excel {
+    background-color: #16a34a;
+  }
+  .WalletRequestFund-excel:hover {
+    background-color: #15803d;
+  }
+  
+  .WalletRequestFund-print {
+    background-color: #0d9488;
+  }
+  .WalletRequestFund-print:hover {
+    background-color: #0f766e;
+  }
+  
+  .WalletRequestFund-tableWrapper {
+    overflow-x: auto;
+  }
+  
+  .WalletRequestFund-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  
+  .WalletRequestFund-table th,
+  .WalletRequestFund-table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  .WalletRequestFund-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .WalletRequestFund-status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .WalletRequestFund-pending {
+    background-color: #fee2e2;
+    color: #dc2626;
+  }
+  
+  .WalletRequestFund-center {
+    text-align: center;
+  }
+
+  @media (min-width: 1024px) {
+    .WalletRequestFund-container{
+      margin-left: 15rem;  /* Example for large screens */
+      margin-top: 1rem;
+    }
+  
+   
+  }
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .WalletRequestFund-container {
+      margin-left: 15rem;  /* Example for tablets */
+      margin-top: 3.8rem;
+    }  
+    
+  }
+  
+  /* Small Screens (Mobile Phones) */
+  @media (max-width: 768px) {
+    .WalletRequestFund-container{
+      margin-left: 0.2rem;  /* Example for mobile phones */
+      margin-top: 1.5rem;
+      
+    }
+  
+   
+  }
+  
+  /* Extra Small Screens (Very Small Mobile Phones) */
+  @media (max-width: 480px) {
+    .WalletRequestFund-container{
+      margin-left: 0.3125rem;  /* Example for very small mobile phones */
+    }
+  
+  }
+  

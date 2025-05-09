@@ -2,13 +2,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/header.css";
 
+// Font Awesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faUser,
+  faBell,
+  faEnvelope,
+  faUserShield,
+  faRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuthenticated"); // Remove authentication flag
-    navigate("/login"); // Redirect to Sign In page
+    localStorage.removeItem("isAuthenticated");
+    navigate("/login");
   };
 
   return (
@@ -23,13 +33,23 @@ export default function Header() {
           ☰
         </button>
 
-        {/* Buttons (Hidden on small screens, shown when menu is open) */}
+        {/* Navigation Buttons */}
         <div className={`menu-buttons ${menuOpen ? "show" : ""}`}>
-          <button className="header-button">Activity</button>
-          <button className="header-button">Alerts</button>
-          <button className="header-button">Message</button>
-          <button className="header-button">Admin</button>
-          <button className="header-button" onClick={handleLogout}>Logout</button>
+          <button className="header-button" onClick={() => navigate("/profile")}>
+            <FontAwesomeIcon icon={faUser} /> Profile
+          </button>
+          <button className="header-button" onClick={() => navigate("/alerts")}>
+            <FontAwesomeIcon icon={faBell} /> Alerts
+          </button>
+          <button className="header-button" onClick={() => navigate("/messages")}>
+            <FontAwesomeIcon icon={faEnvelope} /> Message
+          </button>
+          <button className="header-button" onClick={() => navigate("/admin")}>
+            <FontAwesomeIcon icon={faUserShield} /> Admin
+          </button>
+          <button className="header-button" onClick={handleLogout}>
+            <FontAwesomeIcon icon={faRightFromBracket} /> Logout
+          </button>
         </div>
       </div>
     </div>

@@ -1,0 +1,283 @@
+/* LoanReport.css */
+
+.loan-report-app {
+    background: linear-gradient(to right, #eef2ff, #ffffff, #eef2ff);
+    padding: 24px;
+    max-height: 100vh;
+    overflow-y: auto;
+    font-family: sans-serif;
+  }
+  
+  /* Filter Section */
+  .loan-report-filter {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 32px;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  .filter-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4338ca;
+    margin-bottom: 8px;
+  }
+  .filter-subtitle {
+    color: #6366f1;
+    margin-bottom: 24px;
+  }
+  .filter-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 1fr;       /* equal row heights */
+    gap:3rem;
+    align-items: stretch;      /* stretch children to full cell height */
+    margin-right: 3rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;             /* ensure equal heights */
+  }
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #4338ca;
+  }
+  .input-wrapper {
+    position: relative;
+  }
+  .input-date,
+  .input-text,
+  .select-status {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 14px;
+    border: 1px solid #c4b5fd;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .input-date:focus,
+  .input-text:focus,
+  .select-status:focus {
+    outline: none;
+    border-color: #a5b4fc;
+    box-shadow: 0 0 0 2px rgba(107, 114, 255, 0.3);
+  }
+  .icon.calendar-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #bfdbfe;
+    pointer-events: none;
+  }
+  .form-actions {
+    grid-column: 1 / -1;
+    padding-top: 16px;
+  }
+  .btn-submit {
+    background-color: #4338ca;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px 24px;
+    font-size: 14px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(67, 56, 202, 0.36);
+    transition: background-color 0.2s;
+  }
+  .btn-submit:hover {
+    background-color: #3730a3;
+  }
+  
+  /* Details Section */
+  .loan-details {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    padding: 24px;
+    max-width: 100%;
+    overflow-x: auto;
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;  /* updated font */
+  }
+  .details-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4338ca;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+  }
+  .export-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  .btn-csv {
+    background-color: #facc15;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  .btn-csv:hover { background-color: #eab308; }
+  .btn-excel {
+    background-color: #16a34a;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  .btn-excel:hover { background-color: #15803d; }
+  .btn-print {
+    background-color: #2563eb;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  .btn-print:hover { background-color: #1e40af; }
+  
+  .table-wrapper {
+    overflow-x: auto;
+  }
+  .details-table {
+    width: 100%;
+    min-width: 1200px;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;  /* slightly larger */
+    color: #1e293b;
+    border: 1px solid #c4b5fd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;  /* table font */
+    font-weight: 600;
+  }
+  .details-table thead {
+    background-color: #4338ca;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-family: sans-serif;
+    font-weight: 600;
+  }
+  .details-table th,
+  .details-table td {
+    border: 1px solid #c4b5fd;
+    padding: 8px 12px;
+    font-weight: 550;
+    font-size:1rem;
+  }
+  .details-table th {
+    font-weight: 600;
+    font-size:1;
+  }
+  .details-table tbody tr:nth-child(even) {
+    background-color: #eef2ff;
+  }
+  .details-table tbody tr:hover {
+    background-color: #e0e7ff;
+    transition: background-color 0.2s;
+  }
+  .btn-enach-warning {
+    background-color: #dc2626;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  .btn-enach-warning:hover { background-color: #b91c1c; }
+  .status-pending { color: #dc2626; font-weight: 600; }
+  .status-preclosed { color: #b45309; font-weight: 600; }
+  .status-disbursed { color: #15803d; font-weight: 600; }
+  .btn-card {
+    background-color: #4338ca;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    transition: background-color 0.2s;
+  }
+  .btn-card:hover { background-color: #3730a3; }
+  
+  /* Responsive Grid for Filter Section */
+  @media (min-width: 768px) {
+    .filter-form {
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 1fr;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .filter-form {
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+    }
+  }
+  
+  /* Responsive Layout Adjustments */
+  @media (min-width: 1024px) {
+    .loan-report-app {
+      margin-left: 15rem;
+      margin-top: 1rem;
+    }
+  }
+  
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .loan-report-app {
+      margin-left: 15rem;
+      margin-top: 2.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .loan-report-app {
+      margin-left: 0.2rem;
+      margin-top: 1.5rem;
+      padding: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .loan-report-app {
+      margin-left: 0.3125rem;
+      padding: 12px;
+    }
+  }

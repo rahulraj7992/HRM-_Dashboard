@@ -1,204 +1,231 @@
 /* Reset margin and padding for html and body */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-
-/* Main container to take up the whole screen */
+/* Main container */
 .container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-height: 100vh;
+  box-sizing: border-box;
+  margin-left: 280px; /* Default sidebar width for big screens */
+  transition: margin-left 0.3s ease;
+}
+
+/* Top form section */
+.top-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  flex-grow: 1;
+}
+
+/* Form fields */
+.form-field {
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 14px;
+}
+
+.dark-input {
+  background-color: #f5f5f5;
+}
+
+/* Section below the top form */
+.details-section {
+  margin-top: 40px;
+  flex-grow: 1;
+}
+
+/* Cards */
+.details-card {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section title */
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.section-title i {
+  margin-left: 10px;
+}
+
+/* Generic grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+/* Grid items */
+.grid-item {
+  display: flex;
+  align-items: center;
+}
+
+input[type="text"] {
+  padding: 8px;
+  width: 100%;
+}
+
+input[type="text"]:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+/* Button styles */
+.button {
+  background-color: #15a23b;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #357abd;
+}
+
+/* Customer Details */
+.customer-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.customer-details .details-card,
+.nominee-details .details-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.customer-details .grid-item,
+.nominee-details .grid-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.customer-details input[type="text"],
+.nominee-details input[type="text"] {
+  padding: 10px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Nominee Details */
+.nominee-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* View Chart Button */
+.view-chart-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.view-chart-btn:hover {
+  background-color: #45a049;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* For tablets (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    margin-left: 220px; /* Slightly smaller sidebar space */
   }
-  
-  /* Grid layout for top form section */
+
   .top-form-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    flex-grow: 1; /* Allow this section to grow and take available space */
+    grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* Form field styles */
-  .form-field {
-    margin-bottom: 20px;
+
+  .customer-details,
+  .nominee-details {
+    grid-template-columns: 1fr;
   }
-  
-  .label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 5px;
+}
+
+/* For large phones and small tablets (between 481px and 768px) */
+@media (max-width: 768px) {
+  .container {
+    margin-left: 80px; /* Minimal sidebar */
   }
-  
-  .input-field {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    width: 100%;
-    font-size: 14px;
+
+  .top-form-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .dark-input {
-    background-color: #f5f5f5;
+
+  .customer-details,
+  .nominee-details {
+    grid-template-columns: 1fr;
   }
-  
-  /* Section below the top form, with custom cards */
+
   .details-section {
-    margin-top: 40px;
-    flex-grow: 1;
+    margin-top: 30px;
   }
-  
-  /* Customer and Nominee details cards */
-  .details-card {
-    background-color: #ffff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* For small phones (up to 480px) */
+@media (max-width: 680px) {
+  .container {
+    margin-left: 0px; /* No sidebar margin */
+    padding: 15px;
   }
-  
-  .section-title {
-    font-size: 18px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
+
+  .top-form-grid {
+    grid-template-columns: 1fr;
   }
-  
-  .section-title i {
-    margin-left: 10px;
+
+  .customer-details,
+  .nominee-details {
+    grid-template-columns: 1fr;
   }
-  
-  /* Grid layout for details section */
-  .grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 20px;
+}
+
+/* Extra large screens (above 1400px) */
+@media (min-width: 1400px) {
+  .container {
+    margin-left: 300px; /* Bigger sidebar for extra-large screens */
   }
-  
-  /* Grid item labels and input fields */
-  .grid-item {
-    display: flex;
-    align-items: center;
-  }
-  
-  .grid-item.label {
-    font-weight: 500;
-  }
-  
-  /* Input field styles */
-  input[type="text"] {
-    padding: 8px;
-    width: 100%;
-  }
-  
-  input[type="text"]:focus {
-    border-color: #4a90e2;
-    outline: none;
-  }
-  
-  /* Styles for buttons in the form */
-  .button {
-    background-color: #15a23b;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #357abd;
-  }
-  
-  /* Customer Details section styles */
-  .details-section .customer-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for side-by-side layout */
-    gap: 20px;
-  }
-  
-  .details-section .customer-details .details-card {
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .details-section .customer-details .grid-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-  
-  .details-section .customer-details .grid-item input[type="text"] {
-    padding: 10px;
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  /* Nominee Details section styles */
-  .details-section .nominee-details {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns for side-by-side layout */
-    gap: 20px;
-  }
-  
-  .details-section .nominee-details .details-card {
-    padding: 20px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .details-section .nominee-details .grid-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-  }
-  
-  .details-section .nominee-details .grid-item input[type="text"] {
-    padding: 10px;
-    font-size: 14px;
-    width: 100%;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .top-form-grid {
-      grid-template-columns: 1fr 1fr;
-    }
-  
-    .details-section {
-      margin-top: 30px;
-    }
-  
-    .details-section .customer-details, 
-    .details-section .nominee-details {
-      grid-template-columns: 1fr; /* Stack elements on smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .top-form-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  .view-chart-btn {
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-  
-  .view-chart-btn:hover {
-    background-color: #45a049;
-  }
-  
+}

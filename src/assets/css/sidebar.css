@@ -1,9 +1,9 @@
 /* SIDEBAR BASE STYLES */
 .sidebar {
-  width: 250px;
+  width: 12.5rem;
   background: #a5cbd3;
   color: #171212;
-  padding: 20px;
+  padding: 1.4rem;
   height: 100vh;
   margin-top: 93.5px;
   margin-bottom: 40px;
@@ -24,11 +24,11 @@
 
 /* MAIN CONTENT */
 .main-content {
-  margin-left: 250px;
-  padding: 20px;
+  padding: 0.4rem;
   position: relative;
   min-height: 100vh;
   margin-bottom: 40px;
+  margin-top: 5rem;
 }
 
 /* NAVBAR */
@@ -128,7 +128,7 @@
     justify-content: center;
     box-shadow: none;
   }
-
+  
   .sidebar button {
     flex: 1 1 30%;
     justify-content: center;

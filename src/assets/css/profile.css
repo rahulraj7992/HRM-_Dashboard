@@ -1,18 +1,292 @@
-/* profile.css */
+/* ===== Container ===== */
 .profile-container {
-  height: 100vh;
+  padding: 20px;
+  background: #f0f2f5;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background-color: #f4f4f4; /* Light gray background */
-  padding: 20px;
-  margin: left 9rem;; /* Adjust for sidebar */
 }
 
-.profile-card {
-  width: 400px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.profile-wrapper {
+  background: #fff;
+  max-width: 1200px;
+  width: 100%;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== Section Styling ===== */
+.profile-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.profile-section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.profile-section-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #333;
+}
+
+.profile-section-icon {
+  color: #007bff;
+}
+
+/* ===== Profile Header ===== */
+.profile-header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  border: none;
+}
+
+.profile-image-container {
+  position: relative;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #007bff;
+}
+
+.profile-camera-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-camera {
+  color: #fff;
+  font-size: 14px;
+}
+
+.profile-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.profile-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.profile-position {
+  color: #666;
+  font-size: 14px;
+}
+
+.profile-email,
+.profile-phone {
+  font-size: 14px;
+  color: #444;
+  margin-top: 4px;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.profile-lock-button,
+.profile-logout-button {
+  padding: 8px 16px;
+  font-size: 14px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.profile-lock-button {
+  background-color: #007bff;
+}
+
+.profile-logout-button {
+  background-color: #dc3545;
+}
+
+/* ===== Info List ===== */
+.profile-info-list {
+  display: grid;
+  gap: 12px;
+}
+
+.profile-info-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.profile-info-label {
+  color: #666;
+}
+
+.profile-info-value {
+  font-weight: 600;
+  color: #222;
+}
+
+/* ===== Login Table ===== */
+.profile-login-table-wrapper {
+  overflow-x: auto;
+}
+
+.profile-login-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.profile-login-table th,
+.profile-login-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.profile-login-table th {
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.status-success {
+  color: green;
+  font-weight: bold;
+}
+
+/* ===== Settings & Activity ===== */
+.profile-settings-activity {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.profile-settings,
+.profile-activity {
+  flex: 1;
+  background: #fafafa;
+  padding: 16px;
+  border-radius: 8px;
+  min-width: 280px;
+}
+
+.profile-setting-option {
+  display: block;
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-actions {
+    width: 100%;
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .profile-lock-button,
+  .profile-logout-button {
+    flex: 1;
+    text-align: center;
+  }
+
+  .profile-settings-activity {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.profile-save-button {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 128, 0, 0.2);
+  margin-top: 16px;
+}
+
+.profile-save-button:hover {
+  background-color: #218838;
+  transform: translateY(-1px);
+}
+
+.profile-save-button:active {
+  background-color: #1e7e34;
+  transform: scale(0.98);
+}
+
+
+/* ===== Custom Margins for Different Screen Sizes ===== */
+
+/* For Laptops (max-width: 1200px) */
+/* ===== Custom Margins for Different Screen Sizes ===== */
+
+/* For Laptops (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .profile-container {
+    margin-left: 15rem; /* 20px for laptops (1.25rem) */
+  }
+}
+
+/* For Tablets (max-width: 992px) */
+@media (max-width: 992px) {
+  .profile-container {
+    margin-left: 15rem; /* 15px for tablets (0.9375rem) */
+    margin-top: 3rem;
+  }
+}
+
+/* For Large Screens (min-width: 1201px) */
+@media (min-width: 1201px) {
+  .profile-container {
+    margin-left: 15rem; /* 50px for large screens (3.125rem) */
+  }
+}
+
+/* For Extra Large Screens (min-width: 1600px) */
+@media (min-width: 1600px) {
+  .profile-container {
+    margin-left: 5rem; /* 80px for extra-large screens (5rem) */
+    margin-top: 1rem;
+  }
+}
+
+/* ===== Custom Margins for Mobile Screens ===== */
+
+/* For Mobile Screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .profile-container {
+    margin-left: 0.2rem; /* 10px for mobile screens (0.625rem) */
+    margin-top: 1rem;
+  }
 }

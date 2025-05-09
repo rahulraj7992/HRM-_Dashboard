@@ -9,7 +9,7 @@ import HrModule              from './pages/HrModule';
 import LeaveForm             from './pages/LeaveForm';
 import Holiday               from './pages/Holiday';
 import EmployeeAttendance    from './pages/EmployeeAttendance';
-import{ Profile  }           from './pages/Profile';
+import ProfilePage          from './pages/Profile';
 import CustomerSearch        from './pages/CustomerSearch';
 import UpdatePasswordTable   from './pages/UpdatePassword';
 import Contact               from './pages/Contact';
@@ -28,7 +28,16 @@ import CloseAccount          from './Banking/CloseAccount';
 import Sidebar               from './components/Sidebar';
 import Header                from './components/Header';
 import AuthForm              from './components/AuthForm';
-
+import WalletHistory from './wallet/WalletHistory';
+import RequestWalletFund from './wallet/RequestFund';
+import PayInstallments from './transactions/PayInstallments';
+import CollectionReport from './transactions/CollectionReport';
+import PayDueAmount from './transactions/PayDueAmount';
+import PersonalLoanForm from './Loan/PersonalLoanForm';
+import CcLoanForm from './Loan/CcLoanForm';
+import EmiLoanForm from './Loan/EmiLoanForm';
+import LoanKyc from './Loan/LoanKyc';
+import LoanReport from './Loan/LoanReport';
 import './assets/css/style.css';
 import './assets/css/responsive.css';
 
@@ -77,7 +86,7 @@ export default function App() {
                       <Route path="holiday" element={<Holiday />} />
                       <Route path="EmployeeAttendance" element={<EmployeeAttendance />} />
 
-                      <Route path="profile" element={<Profile />} />
+                      <Route path="profile" element={<ProfilePage/>} />
                       <Route path="customersearch" element={<CustomerSearch />} />
                       <Route path="UpdatePassword" element={<UpdatePasswordTable />} />
                       <Route path="Contact" element={<Contact />} />
@@ -92,6 +101,17 @@ export default function App() {
                       <Route path="Banking/SavingAccountReport" element={<SavingAccountReport />} />
                       <Route path="Banking/CloseAccount" element={<CloseAccount />} />
                       <Route path="Banking/MisPayment" element={<MakeMisPayment />} />
+                      <Route path="wallet/WalletHistory" element={<WalletHistory />} />
+                      <Route path="wallet/RequestFund" element={<RequestWalletFund />} />
+                      <Route path="transactions/PayInstallments" element={<PayInstallments />} />
+                      <Route path="transactions/CollectionReport" element={<CollectionReport />} />
+                      <Route path="transactions/PayDueAmount" element={<PayDueAmount />} />
+                      <Route path="Loan/PersonalLoanForm" element={<PersonalLoanForm />} />
+                      <Route path="Loan/CcLoanForm" element={<CcLoanForm />} />
+                      <Route path="Loan/EmiLoanForm" element={<EmiLoanForm />} />
+                      <Route path="Loan/LoanKyc" element={<LoanKyc />} />
+                      <Route path="Loan/LoanReport" element={<LoanReport />} />
+
                     </Routes>
                   </div>
                 </div>

@@ -1,0 +1,162 @@
+/* PersonalLoanForm.css */
+
+.PersonalLoanForm-container {
+    max-width:100%;
+    margin: 0 auto;
+    padding: 20px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 100vh;
+    overflow-y: auto;
+  }
+  
+  .PersonalLoanForm-container h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 8px;
+    text-align: left;
+  }
+  
+  .PersonalLoanForm-form {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(3, 59, 98, 0.1);
+    padding: 24px;
+  }
+  
+  .PersonalLoanForm-section h2 {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #00509e;
+    margin-bottom: 16px;
+    border-bottom: 2px solid #00509e;
+    padding-bottom: 4px;
+  }
+  
+  .PersonalLoanForm-loan-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .PersonalLoanForm-loan-details-grid {
+    display: grid;
+    gap: 1.8rem 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 8px;
+    margin-right: 3rem;
+  }
+  
+  .PersonalLoanForm-form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    margin-right: 3rem;
+  }
+  
+  .PersonalLoanForm-full-span {
+    grid-column: span 4;
+  }
+  
+  .PersonalLoanForm-form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0a2e67;
+  }
+  
+  .PersonalLoanForm-form-group input,
+  .PersonalLoanForm-form-group select,
+  .PersonalLoanForm-form-group textarea {
+    padding: 10px 12px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1.5px solid #ced4da;
+    transition: border-color 0.3s ease;
+  }
+  
+  .PersonalLoanForm-form-group input:focus,
+  .PersonalLoanForm-form-group select:focus,
+  .PersonalLoanForm-form-group textarea:focus {
+    outline: none;
+    border-color: #2176ff;
+    box-shadow: 0 0 4px rgba(33, 118, 255, 0.4);
+  }
+  
+  .PersonalLoanForm-two-columns {
+    display: flex;
+    gap: 36px;
+    flex-wrap: wrap;
+  }
+  
+  .PersonalLoanForm-guarantor-section .PersonalLoanForm-form-group {
+    margin-bottom: 14px;
+  }
+  
+  .PersonalLoanForm-apply-btn {
+    background: #2176ff;
+    color: white;
+    font-weight: 700;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px;
+    font-size: 1.15rem;
+    transition: background 0.3s ease;
+    align-self: center;
+  }
+  
+  .PersonalLoanForm-apply-btn:hover,
+  .PersonalLoanForm-apply-btn:focus {
+    background: #1a5fd9;
+    outline: none;
+  }
+  
+  .PersonalLoanForm-submit-wrapper {
+    text-align: center;
+  }
+  
+  
+  /*  */
+  @media (min-width: 1024px) {
+    .PersonalLoanForm-container{
+      margin-left: 15rem;  /* Example for large screens */
+      margin-top: 1rem;
+    }
+    
+  
+   
+  }
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .PersonalLoanForm-container {
+      margin-left: 15rem;  /* Example for tablets */
+      margin-top: 2.8rem;
+    }  
+    
+  }
+  
+  /* Small Screens (Mobile Phones) */
+  @media (max-width: 768px) {
+    .PersonalLoanForm-container{
+      margin-left: 0.2rem;  /* Example for mobile phones */
+      margin-top: 1.5rem;
+      
+    }
+  
+   
+  }
+  
+  /* Extra Small Screens (Very Small Mobile Phones) */
+  @media (max-width: 480px) {
+    .PersonalLoanForm-container{
+      margin-left: 0.3125rem;  /* Example for very small mobile phones */
+    }
+  
+  }
+  
+  

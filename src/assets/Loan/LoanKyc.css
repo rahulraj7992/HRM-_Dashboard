@@ -1,0 +1,198 @@
+.LoanKyc-container {
+    padding: 20px;
+    max-width: 100%;
+    margin: auto;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.LoanKyc-container h1 {
+    font-size: 2rem;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.LoanKyc-form {
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.1);
+    box-sizing: border-box;
+    overflow-x: hidden;
+   
+}
+
+.LoanKyc-section {
+    margin-bottom: 30px;
+}
+
+.LoanKyc-section h2 {
+    color: #00509e;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00509e;
+    padding-bottom: 5px;
+}
+
+.LoanKyc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Adjusted for smaller screens */
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.LoanKyc-grid input,
+.LoanKyc-grid select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1.5px solid #ccc;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.LoanKyc-grid input:focus,
+.LoanKyc-grid select:focus {
+    border-color: #2176ff;
+    outline: none;
+}
+
+.LoanKyc-upload-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.LoanKyc-upload-btn {
+    background: #2176ff;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.LoanKyc-upload-btn:hover {
+    background: #155fcc;
+}
+
+.LoanKyc-table-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.LoanKyc-table-actions button {
+    padding: 8px 16px;
+    font-weight: bold;
+    border: none;
+    background: #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.LoanKyc-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.LoanKyc-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.LoanKyc-table th,
+.LoanKyc-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.LoanKyc-table th {
+    background-color: #f0f0f0;
+}
+
+.LoanKyc-action-btn {
+    background: #2176ff;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin: 0 4px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.LoanKyc-action-btn:hover {
+    background: #1a5fd9;
+}
+
+.LoanKyc-submit-wrapper {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.LoanKyc-submit-btn {
+    background: #28a745;
+    color: white;
+    padding: 14px 32px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.LoanKyc-submit-btn:hover {
+    background: #218838;
+}
+
+/* Responsive layout updates */
+
+@media (min-width: 1024px) {
+    .LoanKyc-container {
+        margin-left: 15rem;
+        margin-top: 1rem;
+    }
+    .LoanKyc-grid {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for large screens */
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+    .LoanKyc-container {
+        margin-left: 15rem;
+        margin-top: 2.8rem;
+    }
+    .LoanKyc-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .LoanKyc-container {
+        margin-left: 0.2rem;
+        margin-top: 1.5rem;
+        padding: 16px;
+    }
+    .LoanKyc-grid {
+        grid-template-columns: 1fr 1fr; /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .LoanKyc-container {
+        margin-left: 0.3125rem;
+        padding: 12px;
+    }
+    .LoanKyc-grid {
+        grid-template-columns: 1fr; /* 1 column for very small screens */
+    }
+}
