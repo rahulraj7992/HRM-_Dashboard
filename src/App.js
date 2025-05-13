@@ -38,6 +38,10 @@ import CcLoanForm from './Loan/CcLoanForm';
 import EmiLoanForm from './Loan/EmiLoanForm';
 import LoanKyc from './Loan/LoanKyc';
 import LoanReport from './Loan/LoanReport';
+import DueEmiManagement from './Loan/DueEmiManagement';
+import LoanCollectionReport from './Loan/LoanCollectionReport';
+import LoanEmiCalculator from './Loan/EmiCalculator';
+import PrintLoan from './print/LoanLetter';
 import './assets/css/style.css';
 import './assets/css/responsive.css';
 
@@ -111,6 +115,10 @@ export default function App() {
                       <Route path="Loan/EmiLoanForm" element={<EmiLoanForm />} />
                       <Route path="Loan/LoanKyc" element={<LoanKyc />} />
                       <Route path="Loan/LoanReport" element={<LoanReport />} />
+                      <Route path="Loan/DueEmiManagement" element={<DueEmiManagement />} />
+                      <Route path="Loan/LoanCollectionReport" element={<LoanCollectionReport />} />
+                      <Route path="Loan/EmiCalculator" element={<LoanEmiCalculator />} />
+                      <Route path="Print/LoanLetter" element={<PrintLoan />} />
 
                     </Routes>
                   </div>

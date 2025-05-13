@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import '../assets/Loan/LoanReport.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

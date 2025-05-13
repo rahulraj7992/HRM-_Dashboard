@@ -1,0 +1,190 @@
+.PrintLoan-container {
+  background-color: #f3f4f6;
+  padding: 1rem;
+}
+
+.PrintLoan-section {
+  padding: 1.5rem;
+  border-radius: 0.375rem;
+  margin-bottom: 1.5rem;
+}
+
+.print-loan-filter {
+  background: linear-gradient(90deg, #2a6fdb 0%, #3ac162 100%);
+}
+
+.print-loan-accounts {
+  background: linear-gradient(90deg, #cec6c9 0%, #cec6c9 100%);
+}
+
+.PrintLoan-heading {
+  color: white;
+  font-weight: bold;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.PrintLoan-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.PrintLoan-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: white;
+}
+
+.PrintLoan-input {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  background-color: white;
+  color: black;
+}
+
+.PrintLoan-submit {
+  grid-column: span 3;
+}
+
+.PrintLoan-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: linear-gradient(90deg, #34d399 0%, #3b82f6 100%);
+  color: white;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.PrintLoan-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.PrintLoan-btn {
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.csv {
+  background-color: #fbbf24;
+  color: white;
+}
+
+.excel {
+  background-color: #10b981;
+  color: white;
+}
+
+.print {
+  background-color: #2563eb;
+  color: white;
+}
+
+.PrintLoan-options {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.PrintLoan-select {
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.PrintLoan-search-label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.PrintLoan-search-input {
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  border: 1px solid #d1d5db;
+}
+
+.PrintLoan-table-container {
+  overflow-x: auto;
+}
+
+.PrintLoan-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #d1d5db;
+}
+
+.PrintLoan-table th,
+.PrintLoan-table td {
+  padding: 0.75rem;
+  text-align: center;
+  border: 1px solid #d1d5db;
+}
+
+.PrintLoan-link {
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.PrintLoan-link:hover {
+  text-decoration: underline;
+}
+
+
+  @media (min-width: 1024px) {
+    .PrintLoan-container{
+      margin-left: 15rem;  /* Example for large screens */
+      margin-top: 1rem;
+    }
+    
+  
+   
+  }
+  
+  /* Medium Screens (Tablets) */
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .PrintLoan-container {
+      margin-left: 15rem;  /* Example for tablets */
+      margin-top: 2.8rem;
+    }  
+    
+  }
+  
+  /* Small Screens (Mobile Phones) */
+  @media (max-width: 768px) {
+    .PrintLoan-container{
+      margin-left: 0.2rem;  /* Example for mobile phones */
+      margin-top: 1.5rem;
+      
+    }
+  
+   
+  }
+  
+  /* Extra Small Screens (Very Small Mobile Phones) */
+  @media (max-width: 480px) {
+    .PrintLoan-container{
+      margin-left: 0.3125rem;  /* Example for very small mobile phones */
+    }
+  
+  }
+  
+  

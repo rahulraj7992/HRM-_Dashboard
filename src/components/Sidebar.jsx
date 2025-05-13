@@ -72,10 +72,10 @@ export default function Sidebar() {
         { text: "Fixed EMI Loan", path: "/Loan/EmiLoanForm", icon: "fa fa-coins" },
         { text: "Upload KYC", path: "/loan/LoanKyc", icon: "fa fa-id-card" },
         { text: "Loan Report", path: "/loan/LoanReport", icon: "fa fa-chart-pie" },
-        { text: "EMI Due Report", path: "/loan/emiDue", icon: "fa fa-exclamation-circle" },
-        { text: "Collection Report", path: "/loan/collection", icon: "fa fa-file-invoice-dollar" },
+        { text: "EMI Due Report", path: "/loan/DueEmiManagement", icon: "fa fa-exclamation-circle" },
+        { text: "Collection Report", path: "/loan/LoanCollectionReport", icon: "fa fa-file-invoice-dollar" },
         { text: "Loan Closure", path: "/loan/closure", icon: "fa fa-times-circle" },
-        { text: "Calculator", path: "/loan/calculator", icon: "fa fa-calculator" },
+        { text: "Calculator", path: "/loan/EmiCalculator", icon: "fa fa-calculator" },
       ],
     },
 
